@@ -1,31 +1,40 @@
 import React from "react";
 import "./Product.css";
-import { NavLink } from "react-router-dom";
-function Product() {
+import { NavLink, useParams } from "react-router-dom";
+function Product({ productDB }) {
+  const { id } = useParams();
+
   return (
     <div className="productPage">
       <div className="container">
         <p className="productWay">Home / Shop</p>
         <div className="productData">
-          <div className="productImgs">
-            <div className="imgsCol">
-              <div className="itemImg">
-                <img src="/public/box1.1.png" alt="" />
-              </div>
-              <div className="itemImg">
-                <img src="/public/box1.1.png" alt="" />
-              </div>
-              <div className="itemImg">
-                <img src="/public/box1.1.png" alt="" />
-              </div>
-              <div className="itemImg">
-                <img src="/public/box1.1.png" alt="" />
-              </div>
-            </div>
-            <div className="mainImg">
-              <img src="/public/box1.1.png" alt="" />
-            </div>
-          </div>
+          {productDB.map((item) => {
+            if (id == item.id) {
+              return (
+                <div className="productImgs">
+                  <div className="imgsCol">
+                    <div className="itemImg">
+                      <img src={item.imgs[0]} alt="" />
+                    </div>
+                    <div className="itemImg">
+                      <img src={item.imgs[1]} alt="" />
+                    </div>
+                    <div className="itemImg">
+                      <img src={item.imgs[2]} alt="" />
+                    </div>
+                    <div className="itemImg">
+                      <img src={item.imgs[3]} alt="" />
+                    </div>
+                  </div>
+                  <div className="mainImg">
+                    <img src={item.img} alt="" />
+                  </div>
+                </div>
+              );
+            }
+          })}
+       
           <div className="productDataInfo">
             <h2 className="productInfoTitle">Barberton Daisy</h2>
             <div className="price">
@@ -196,11 +205,11 @@ function Product() {
                 <p>$119.00</p>
               </div>
             </div>
-          <div className="heroDots">
-            <div className="dot"></div>
-            <div className="activeDot"></div>
-            <div className="dot"></div>
-          </div>
+            <div className="heroDots">
+              <div className="dot"></div>
+              <div className="activeDot"></div>
+              <div className="dot"></div>
+            </div>
           </div>
         </div>
       </div>

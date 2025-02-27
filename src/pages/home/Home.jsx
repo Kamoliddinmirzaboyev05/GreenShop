@@ -1,7 +1,9 @@
 import React from "react";
 import "./Home.css";
-import { NavLink } from "react-router-dom";
-function Home() {
+import { Link, NavLink } from "react-router-dom";
+function Home({ productDB }) {
+  console.log(productDB);
+
   return (
     <div className="homePage">
       <div className="homeHero">
@@ -101,87 +103,21 @@ function Home() {
                 </div>
               </div>
               <div className="productsBlock">
-                <div className="productBox">
-                  <div className="productImg">
-                    <img src="/box1.1.png" alt="" />
-                  </div>
-                  <div className="productText">
-                    <h3>Barberton Daisy</h3>
-                    <p>$119.00</p>
-                  </div>
-                </div>
-                <div className="productBox">
-                  <div className="productImg">
-                    <img src="/box1.1.png" alt="" />
-                  </div>
-                  <div className="productText">
-                    <h3>Barberton Daisy</h3>
-                    <p>$119.00</p>
-                  </div>
-                </div>
-                <div className="productBox">
-                  <div className="productImg">
-                    <img src="/box1.1.png" alt="" />
-                  </div>
-                  <div className="productText">
-                    <h3>Barberton Daisy</h3>
-                    <p>$119.00</p>
-                  </div>
-                </div>
-                <div className="productBox">
-                  <div className="productImg">
-                    <img src="/box1.1.png" alt="" />
-                  </div>
-                  <div className="productText">
-                    <h3>Barberton Daisy</h3>
-                    <p>$119.00</p>
-                  </div>
-                </div>
-                <div className="productBox">
-                  <div className="productImg">
-                    <img src="/box1.1.png" alt="" />
-                  </div>
-                  <div className="productText">
-                    <h3>Barberton Daisy</h3>
-                    <p>$119.00</p>
-                  </div>
-                </div>
-                <div className="productBox">
-                  <div className="productImg">
-                    <img src="/box1.1.png" alt="" />
-                  </div>
-                  <div className="productText">
-                    <h3>Barberton Daisy</h3>
-                    <p>$119.00</p>
-                  </div>
-                </div>
-                <div className="productBox">
-                  <div className="productImg">
-                    <img src="/box1.1.png" alt="" />
-                  </div>
-                  <div className="productText">
-                    <h3>Barberton Daisy</h3>
-                    <p>$119.00</p>
-                  </div>
-                </div>
-                <div className="productBox">
-                  <div className="productImg">
-                    <img src="/box1.1.png" alt="" />
-                  </div>
-                  <div className="productText">
-                    <h3>Barberton Daisy</h3>
-                    <p>$119.00</p>
-                  </div>
-                </div>
-                <div className="productBox">
-                  <div className="productImg">
-                    <img src="/box1.1.png" alt="" />
-                  </div>
-                  <div className="productText">
-                    <h3>Barberton Daisy</h3>
-                    <p>$119.00</p>
-                  </div>
-                </div>
+                {productDB.map((item) => {
+                  return (
+                    <Link to={`/product/${item.id}`}>
+                      <div className="productBox">
+                        <div className="productImg">
+                          <img src={item.img} alt="" />
+                        </div>
+                        <div className="productText">
+                          <h3>{item.title}</h3>
+                          <p>{item.price}</p>
+                        </div>
+                      </div>
+                    </Link>
+                  );
+                })}
               </div>
               <div className="pageNum">
                 <div className="numBtns">

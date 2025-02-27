@@ -44,7 +44,7 @@ function Product() {
         <div className="productSize">
           <h3>Size: </h3>
           <div className="productSizes">
-            <div className="oneSize">
+            <div className="oneSize activeSize">
               <p>S</p>
             </div>
             <div className="oneSize">

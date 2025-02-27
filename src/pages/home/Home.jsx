@@ -19,7 +19,7 @@ function Home() {
             <button>SHOP NOW</button>
           </div>
           <div className="homeHeroImg">
-            <img src="/public/heroimg.png" alt="" />
+            <img src="/heroimg.png" alt="" />
           </div>
           <div className="heroDots">
             <div className="dot"></div>
@@ -81,7 +81,7 @@ function Home() {
                 </div>
               </div>
               <div className="sideBarAd">
-                <img src="/public/supersale.png" alt="" />
+                <img src="/supersale.png" alt="" />
               </div>
             </div>
             <div className="productSide">
@@ -103,7 +103,7 @@ function Home() {
               <div className="productsBlock">
                 <div className="productBox">
                   <div className="productImg">
-                    <img src="/public/box1.1.png" alt="" />
+                    <img src="/box1.1.png" alt="" />
                   </div>
                   <div className="productText">
                     <h3>Barberton Daisy</h3>
@@ -112,7 +112,7 @@ function Home() {
                 </div>
                 <div className="productBox">
                   <div className="productImg">
-                    <img src="/public/box1.1.png" alt="" />
+                    <img src="/box1.1.png" alt="" />
                   </div>
                   <div className="productText">
                     <h3>Barberton Daisy</h3>
@@ -121,7 +121,7 @@ function Home() {
                 </div>
                 <div className="productBox">
                   <div className="productImg">
-                    <img src="/public/box1.1.png" alt="" />
+                    <img src="/box1.1.png" alt="" />
                   </div>
                   <div className="productText">
                     <h3>Barberton Daisy</h3>
@@ -130,7 +130,7 @@ function Home() {
                 </div>
                 <div className="productBox">
                   <div className="productImg">
-                    <img src="/public/box1.1.png" alt="" />
+                    <img src="/box1.1.png" alt="" />
                   </div>
                   <div className="productText">
                     <h3>Barberton Daisy</h3>
@@ -139,7 +139,7 @@ function Home() {
                 </div>
                 <div className="productBox">
                   <div className="productImg">
-                    <img src="/public/box1.1.png" alt="" />
+                    <img src="/box1.1.png" alt="" />
                   </div>
                   <div className="productText">
                     <h3>Barberton Daisy</h3>
@@ -148,7 +148,7 @@ function Home() {
                 </div>
                 <div className="productBox">
                   <div className="productImg">
-                    <img src="/public/box1.1.png" alt="" />
+                    <img src="/box1.1.png" alt="" />
                   </div>
                   <div className="productText">
                     <h3>Barberton Daisy</h3>
@@ -157,7 +157,7 @@ function Home() {
                 </div>
                 <div className="productBox">
                   <div className="productImg">
-                    <img src="/public/box1.1.png" alt="" />
+                    <img src="/box1.1.png" alt="" />
                   </div>
                   <div className="productText">
                     <h3>Barberton Daisy</h3>
@@ -166,7 +166,7 @@ function Home() {
                 </div>
                 <div className="productBox">
                   <div className="productImg">
-                    <img src="/public/box1.1.png" alt="" />
+                    <img src="/box1.1.png" alt="" />
                   </div>
                   <div className="productText">
                     <h3>Barberton Daisy</h3>
@@ -175,7 +175,7 @@ function Home() {
                 </div>
                 <div className="productBox">
                   <div className="productImg">
-                    <img src="/public/box1.1.png" alt="" />
+                    <img src="/box1.1.png" alt="" />
                   </div>
                   <div className="productText">
                     <h3>Barberton Daisy</h3>
@@ -202,7 +202,7 @@ function Home() {
             <div className="brendProductBlock">
               <div className="brendProductBox">
                 <div className="boxImg">
-                  <img src="/public/box2.1.png" alt="" />
+                  <img src="/box2.1.png" alt="" />
                 </div>
                 <div className="brendProductBoxText">
                   <h2>Summer cactus & succulents</h2>
@@ -217,7 +217,7 @@ function Home() {
               </div>
               <div className="brendProductBox">
                 <div className="boxImg">
-                  <img src="/public/box2.2.png" alt="" />
+                  <img src="/box2.2.png" alt="" />
                 </div>
                 <div className="brendProductBoxText">
                   <h2>Summer cactus & succulents</h2>
@@ -245,7 +245,7 @@ function Home() {
             <div className="blogPosts">
               <div className="post">
                 <div className="postImg">
-                  <img src="/public/box3.1.png" alt="" />
+                  <img src="/box3.1.png" alt="" />
                 </div>
                 <div className="postText">
                   <p className="postDate">September 12 | Read in 6 minutes</p>
@@ -262,7 +262,7 @@ function Home() {
               </div>
               <div className="post">
                 <div className="postImg">
-                  <img src="/public/box3.1.png" alt="" />
+                  <img src="/box3.1.png" alt="" />
                 </div>
                 <div className="postText">
                   <p className="postDate">September 12 | Read in 6 minutes</p>
@@ -279,7 +279,7 @@ function Home() {
               </div>
               <div className="post">
                 <div className="postImg">
-                  <img src="/public/box3.1.png" alt="" />
+                  <img src="/box3.1.png" alt="" />
                 </div>
                 <div className="postText">
                   <p className="postDate">September 12 | Read in 6 minutes</p>
@@ -296,7 +296,7 @@ function Home() {
               </div>
               <div className="post">
                 <div className="postImg">
-                  <img src="/public/box3.1.png" alt="" />
+                  <img src="/box3.1.png" alt="" />
                 </div>
                 <div className="postText">
                   <p className="postDate">September 12 | Read in 6 minutes</p>

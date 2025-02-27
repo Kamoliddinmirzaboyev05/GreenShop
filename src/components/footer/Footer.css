@@ -1,0 +1,133 @@
+footer {
+  padding-top: 100px;
+}
+footer .container {
+  background-color: #fbfbfb;
+}
+.footerSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px;
+  gap: 30px;
+}
+.footerBlock {
+  display: flex;
+  gap: 30px;
+}
+.footerBox {
+  width: 210px;
+}
+.footerBox:first-child,
+.footerBox:nth-child(2) {
+  border-right: 1px solid #e9f2eb;
+  padding-right: 20px;
+  width: 230px;
+}
+.footerBoxImg {
+  padding-bottom: 10px;
+}
+.footerBoxText h2 {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 16px;
+  color: #3d3d3d;
+  padding-bottom: 9px;
+}
+.footerBoxText p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #727272;
+}
+.footerJoin h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #3d3d3d;
+  padding-bottom: 18px;
+}
+.footerJoin form {
+  display: flex;
+  padding-bottom: 17px;
+}
+.footerJoin form input {
+  width: 100%;
+  padding-left: 15px;
+  outline: none;
+  box-shadow: 0px 0px 20px 0px #0000000f;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border: none;
+}
+.footerJoin form button {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+.footerJoin p {
+  color: #727272;
+  font-size: 13px;
+  line-height: 22px;
+}
+.mainFooterData {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 70px;
+  background-color: #edf6ee;
+  padding: 26px 23px;
+  border-top: #d7e9da 1px solid;
+  border-bottom: #d7e9da 1px solid;
+}
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.footerLinks {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  padding: 33px 23px;
+}
+.footerSocials {
+  display: flex;
+  gap: 10px;
+  padding-bottom: 30px;
+}
+.paymentType {
+  width: 40px;
+  height: 40px;
+}
+.payment {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.paymentType img {
+  width: 100%;
+}
+.footerLinks h2 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 16px;
+  color: #3d3d3d;
+  padding-bottom: 20px;
+}
+.col p {
+  padding-bottom: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #3d3d3d;
+  line-height: 30px;
+  cursor: pointer;
+}
+.socialBox {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #d7e9da;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  color: #8ec699;
+}

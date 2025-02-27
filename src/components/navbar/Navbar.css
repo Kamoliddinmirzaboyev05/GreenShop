@@ -1,0 +1,44 @@
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+nav {
+  border-bottom: 0.3px solid #46a358;
+}
+nav .links {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  list-style: none;
+}
+nav .links a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #3d3d3d;
+  padding-bottom: 23px;
+}
+nav .links a.active {
+  font-weight: 700;
+  border-bottom: 3px solid #46a358;
+}
+.navBtns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.navBtns .loginBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 17px;
+  border: none;
+  background-color: #46a358;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  gap: 4px;
+}

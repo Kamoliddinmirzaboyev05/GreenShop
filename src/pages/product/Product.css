@@ -90,5 +90,143 @@
 }
 .activeSize {
   border-color: 1px #46a358 solid !important;
-  color:#46a358;
+  color: #46a358;
+}
+.productBtns {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  padding: 23px 0;
+}
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 20px;
+  padding-right: 20px;
+}
+.counter button {
+  border-radius: 50%;
+  font-size: 28px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+.counter p {
+  font-size: 18px;
+  font-weight: 500;
+  color: #3d3d3d;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.buyNow {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+}
+.addCart,
+.likeBtn {
+  background-color: transparent;
+  border: 1px solid #46a358;
+  color: #46a358;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+.likeBtn {
+  font-size: 18px;
+}
+.categories p {
+  font-size: 15px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #acacac;
+  padding-bottom: 10px;
+}
+.categories p span {
+  color: #727272;
+}
+.share,
+.productSocials {
+  color: #3d3d3d;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 15px;
+}
+.productSocials i:hover {
+  color: #46a358;
+}
+
+/* Styling description */
+
+.descriptions {
+  padding-top: 80px;
+  padding-bottom: 120px;
+}
+.descrLinks {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  border-bottom: 0.3px solid #46a35880;
+}
+.descrLinks a {
+  text-decoration: none;
+  color: #3d3d3d;
+  font-size: 17px;
+  font-weight: 400;
+  padding-bottom: 12px;
+}
+.descrLinks a.active {
+  font-weight: 700;
+  color: #46a358;
+  border-bottom: #46a358 1px solid;
+}
+.descrText {
+  padding: 18px 0;
+}
+.descrText p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #727272;
+  padding-bottom: 30px;
+}
+.descrText h3 {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #3d3d3d;
+}
+
+/* Related products styling start */
+
+.relatedProductsBlock {
+  display: flex;
+  justify-content: space-between;
+  padding: 44px 0;
+  position: relative;
+}
+.relatedTitle {
+  border-bottom: 0.3px solid #46a35880;
+}
+.relatedTitle h2 {
+  font-weight: 700;
+  font-size: 17px;
+  color: #46a358;
+  padding-bottom: 12px;
+}
+.relatedProductsBlock .productBox{
+    width: 220px;
+}
+.relatedProductsBlock .heroDots{
+    bottom: -10px;
 }

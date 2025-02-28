@@ -1,46 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Product.css";
 import { NavLink, useParams } from "react-router-dom";
 function Product({ productDB }) {
   const { id } = useParams();
-
+  const [oneProduct, setOneProduct] = useState(
+    productDB.filter((item) => {
+      return id == item.id;
+    })
+  );
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
   return (
     <div className="productPage">
       <div className="container">
         <p className="productWay">Home / Shop</p>
         <div className="productData">
-          {productDB.map((item) => {
-            if (id == item.id) {
-              return (
-                <div className="productImgs">
-                  <div className="imgsCol">
-                    <div className="itemImg">
-                      <img src={item.imgs[0]} alt="" />
-                    </div>
-                    <div className="itemImg">
-                      <img src={item.imgs[1]} alt="" />
-                    </div>
-                    <div className="itemImg">
-                      <img src={item.imgs[2]} alt="" />
-                    </div>
-                    <div className="itemImg">
-                      <img src={item.imgs[3]} alt="" />
-                    </div>
-                  </div>
-                  <div className="mainImg">
-                    <img src={item.img} alt="" />
-                  </div>
-                </div>
-              );
-            }
-          })}
-       
+        <div className="productImgs">
+            <div className="imgsCol">
+              <div className="itemImg">
+                <img src={oneProduct[0].img} alt="" />
+              </div>
+              <div className="itemImg">
+                <img src={oneProduct[0].imgs[1]} alt="" />
+              </div>
+              <div className="itemImg">
+                <img src={oneProduct[0].imgs[2]} alt="" />
+              </div>
+              <div className="itemImg">
+                <img src={oneProduct[0].imgs[3]} alt="" />
+              </div>
+            </div>
+            <div className="mainImg">
+              <img src={oneProduct[0].img} alt="" />
+            </div>
+          </div>
           <div className="productDataInfo">
             <h2 className="productInfoTitle">Barberton Daisy</h2>
             <div className="price">
               <p>$119.00</p>
               <div className="stars">
-                <img src="/public/stars.svg" alt="" />
+                <img src="/stars.svg" alt="" />
                 <p>19 Customer Review</p>
               </div>
             </div>

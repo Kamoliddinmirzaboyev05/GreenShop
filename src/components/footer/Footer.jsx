@@ -8,7 +8,7 @@ function Footer() {
           <div className="footerBlock">
             <div className="footerBox">
               <div className="footerBoxImg">
-                <img src="/public/footerimg1.png" alt="" />
+                <img src="/footerimg1.png" alt="" />
               </div>
               <div className="footerBoxText">
                 <h2>Garden Care</h2>
@@ -20,7 +20,7 @@ function Footer() {
             </div>
             <div className="footerBox">
               <div className="footerBoxImg">
-                <img src="/public/footerimg1.png" alt="" />
+                <img src="/footerimg1.png" alt="" />
               </div>
               <div className="footerBoxText">
                 <h2>Garden Care</h2>
@@ -32,7 +32,7 @@ function Footer() {
             </div>
             <div className="footerBox">
               <div className="footerBoxImg">
-                <img src="/public/footerimg1.png" alt="" />
+                <img src="/footerimg1.png" alt="" />
               </div>
               <div className="footerBoxText">
                 <h2>Garden Care</h2>
@@ -59,20 +59,20 @@ function Footer() {
         </div>
         <div className="mainFooterData">
           <div className="logo">
-            <img src="/public/logo.svg" alt="" />
+            <img src="/logo.svg" alt="" />
           </div>
           <div className="row">
-            <img src="/public/Location.svg" alt="" />
+            <img src="/Location.svg" alt="" />
             <p>
               70 West Buckingham Ave. <br /> Farmingdale, NY 11735
             </p>
           </div>
           <div className="row">
-            <img src="/public/Message.svg" alt="" />
+            <img src="/Message.svg" alt="" />
             <p>contact@greenshop.com</p>
           </div>
           <div className="row">
-            <img src="/public/Calling.svg" alt="" />
+            <img src="/Calling.svg" alt="" />
             <p>+88 01911 717 490</p>
           </div>
         </div>
@@ -123,16 +123,16 @@ function Footer() {
             <h2>We accept</h2>
             <div className="payment">
               <div className="paymentType">
-                <img src="/public/paypal.svg" alt="" />
+                <img src="/paypal.svg" alt="" />
               </div>
               <div className="paymentType">
-                <img src="/public/visa.svg" alt="" />
+                <img src="/visa.svg" alt="" />
               </div>
               <div className="paymentType">
-                <img src="/public/mastercard.svg" alt="" />
+                <img src="/mastercard.svg" alt="" />
               </div>
               <div className="paymentType">
-                <img src="/public/american-express.svg" alt="" />
+                <img src="/american-express.svg" alt="" />
               </div>
             </div>
           </div>

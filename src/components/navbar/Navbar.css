@@ -42,3 +42,145 @@ nav .links a.active {
   color: white;
   gap: 4px;
 }
+.register {
+  position: fixed;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.368);
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transform: translate(0);
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+.loginPage,
+.registerPage {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  padding: 50px 100px;
+  position: relative;
+  border-bottom: 10px solid #46a358;
+}
+.closeModal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 18px;
+  color: #46a358;
+  transition: all 0.2s ease;
+}
+.closeModal:hover {
+  transform: rotate(90deg);
+  color: red;
+}
+.loginPage form,
+.registerPage form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.loginPage .formlinks,
+.registerPage .formlinks {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 35px;
+}
+.loginPage .formlinks a,
+.registerPage .formlinks a {
+  font-size: 20px;
+  font-weight: 600;
+  color: #3d3d3d;
+}
+.loginPage .formlinks a:first-child {
+  color: #46a358 !important;
+}
+.logininfo {
+  font-size: 13px;
+  color: #3d3d3d;
+  padding-bottom: 14px;
+}
+.loginInput,
+.passInput {
+  padding: 10px 15px;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 17px;
+}
+.passInput {
+  margin-bottom: 10px;
+}
+form input {
+  width: 100%;
+  height: 100%;
+  padding: 15px 0px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.forgot {
+  width: 100%;
+  text-align: right;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #46a358;
+  padding-bottom: 27px;
+}
+.loginBtn {
+  width: 100%;
+  margin-bottom: 47px;
+}
+.elseWay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-bottom: 27px;
+}
+.elseWay span {
+  width: 90px;
+  height: 1px;
+  background-color: #eaeaea;
+}
+.elseWay p {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #3d3d3d;
+}
+.orWay {
+  display: flex;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.hidden {
+  opacity: 0;
+  z-index: -2;
+}
+.hiddenModal {
+  opacity: 0;
+  display: none;
+  transform: translateY(-1000px);
+}
+.registerPage .formlinks a:first-child {
+  color: #3d3d3d;
+}
+.registerPage .formlinks a:last-child {
+  color: #46a358;
+}

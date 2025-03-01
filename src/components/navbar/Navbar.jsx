@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isOpenLogin, setIsOpenLogin] = useState(true);
+
   return (
     <div className="navbarPage">
       <nav>
@@ -27,13 +30,127 @@ function Navbar() {
           <div className="navBtns">
             <i className="fas fa-search"></i>
             <i className="fa fa-shopping-cart"></i>
-            <button className="loginBtn">
+            <button
+              onClick={() => {
+                setIsOpen(true);
+              }}
+            >
               <img src="/public/Logout.svg" alt="" />
               <p>Login</p>
             </button>
           </div>
         </div>
       </nav>
+      <div className={isOpen ? "register" : " register hidden"}>
+        <div className={isOpenLogin ? "loginPage" : " hiddenModal"}>
+          <form action="#">
+            <div
+              className="closeModal"
+              onClick={() => {
+                setIsOpen(false);
+              }}
+            >
+              <img src="/public/x.svg" alt="" />
+            </div>
+            <div className="formlinks">
+              <Link>Login </Link>
+              <p>|</p>
+              <Link
+                onClick={() => {
+                  setIsOpenLogin(false);
+                }}
+              >
+                Register
+              </Link>
+            </div>
+            <p className="logininfo">
+              Enter your username and password to login.
+            </p>
+            <div className="loginInput">
+              <input type="text" placeholder="almamun_uxui@outlook.com" />
+            </div>
+            <div className="passInput">
+              <input type="password" placeholder="*******" />
+              <img src="/public/nosee.svg" alt="" />
+            </div>
+            <p className="forgot">Forgot Password?</p>
+            <button className="loginBtn">Login</button>
+            <div className="elseWay">
+              <span></span>
+              <p>Or login with</p>
+              <span></span>
+            </div>
+            <div className="orWay">
+              <img src="/public/google.svg" alt="" />
+              <p>Login with Google</p>
+            </div>
+            <div className="orWay">
+              <img src="/public/facebook.svg" alt="" />
+              <p>Login with Facebook</p>
+            </div>
+          </form>
+        </div>
+        <div
+          className={
+            isOpenLogin
+              ? "hiddenModal registerPage loginPage"
+              : "registerPage "
+          }
+        >
+          <form action="#">
+            <div
+              className="closeModal"
+              onClick={() => {
+                setIsOpen(false);
+              }}
+            >
+              <img src="/public/x.svg" alt="" />
+            </div>
+            <div className="formlinks">
+              <Link
+                onClick={() => {
+                  setIsOpenLogin(true);
+                }}
+              >
+                Login{" "}
+              </Link>
+              <p>|</p>
+              <Link>Register</Link>
+            </div>
+            <p className="logininfo">
+              Enter your email and password to register.
+            </p>
+            <div className="loginInput">
+              <input type="text" placeholder="Username" />
+            </div>
+            <div className="passInput">
+              <input type="password" placeholder="Enter your email address" />
+            </div>
+            <div className="passInput">
+              <input type="password" placeholder="Password" />
+              <img src="/public/nosee.svg" alt="" />
+            </div>
+            <div className="loginInput">
+              <input type="text" placeholder="Confirm Password" />
+            </div>
+            <p className="forgot">Forgot Password?</p>
+            <button className="loginBtn">Login</button>
+            <div className="elseWay">
+              <span></span>
+              <p>Or login with</p>
+              <span></span>
+            </div>
+            <div className="orWay">
+              <img src="/public/google.svg" alt="" />
+              <p>Login with Google</p>
+            </div>
+            <div className="orWay">
+              <img src="/public/facebook.svg" alt="" />
+              <p>Login with Facebook</p>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   );
 }

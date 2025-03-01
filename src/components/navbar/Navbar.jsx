@@ -11,7 +11,7 @@ function Navbar() {
       <nav>
         <div className="container">
           <div className="logo">
-            <img src="/public/logo.svg" alt="" />
+            <img src="/logo.svg" alt="" />
           </div>
           <ul className="links">
             <li>
@@ -35,7 +35,7 @@ function Navbar() {
                 setIsOpen(true);
               }}
             >
-              <img src="/public/Logout.svg" alt="" />
+              <img src="/Logout.svg" alt="" />
               <p>Login</p>
             </button>
           </div>
@@ -50,7 +50,7 @@ function Navbar() {
                 setIsOpen(false);
               }}
             >
-              <img src="/public/x.svg" alt="" />
+              <img src="/x.svg" alt="" />
             </div>
             <div className="formlinks">
               <Link>Login </Link>
@@ -71,7 +71,7 @@ function Navbar() {
             </div>
             <div className="passInput">
               <input type="password" placeholder="*******" />
-              <img src="/public/nosee.svg" alt="" />
+              <img src="/nosee.svg" alt="" />
             </div>
             <p className="forgot">Forgot Password?</p>
             <button className="loginBtn">Login</button>
@@ -81,11 +81,11 @@ function Navbar() {
               <span></span>
             </div>
             <div className="orWay">
-              <img src="/public/google.svg" alt="" />
+              <img src="/google.svg" alt="" />
               <p>Login with Google</p>
             </div>
             <div className="orWay">
-              <img src="/public/facebook.svg" alt="" />
+              <img src="/facebook.svg" alt="" />
               <p>Login with Facebook</p>
             </div>
           </form>
@@ -104,7 +104,7 @@ function Navbar() {
                 setIsOpen(false);
               }}
             >
-              <img src="/public/x.svg" alt="" />
+              <img src="/x.svg" alt="" />
             </div>
             <div className="formlinks">
               <Link
@@ -128,7 +128,7 @@ function Navbar() {
             </div>
             <div className="passInput">
               <input type="password" placeholder="Password" />
-              <img src="/public/nosee.svg" alt="" />
+              <img src="/nosee.svg" alt="" />
             </div>
             <div className="loginInput">
               <input type="text" placeholder="Confirm Password" />
@@ -141,11 +141,11 @@ function Navbar() {
               <span></span>
             </div>
             <div className="orWay">
-              <img src="/public/google.svg" alt="" />
+              <img src="/google.svg" alt="" />
               <p>Login with Google</p>
             </div>
             <div className="orWay">
-              <img src="/public/facebook.svg" alt="" />
+              <img src="/facebook.svg" alt="" />
               <p>Login with Facebook</p>
             </div>
           </form>

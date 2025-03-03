@@ -110,7 +110,7 @@ function Home({ productDB }) {
                         <div className="productImg">
                           <div className="hoverIcons">
                             <Link to={"/cart"}>
-                            <i className="fas fa-shopping-cart"></i>
+                              <i className="fas fa-shopping-cart"></i>
                             </Link>
                             <i className="fas fa-heart"></i>
                             <i className="fas fa-search"></i>
@@ -205,11 +205,27 @@ function Home({ productDB }) {
               </div>
               <div className="post">
                 <div className="postImg">
-                  <img src="/box3.1.png" alt="" />
+                  <img src="/box3.2.png" alt="" />
                 </div>
                 <div className="postText">
                   <p className="postDate">September 12 | Read in 6 minutes</p>
-                  <h2>Cactus & Succulent Care Tips</h2>
+                  <h2>Top 10 Succulents for Your Home</h2>
+                  <p className="postInfo">
+                    Best in hanging baskets. Prefers medium to high light.
+                  </p>
+                  <button>
+                    <p>Read More</p>
+                    <i className="fas fa-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+              <div className="post">
+                <div className="postImg">
+                  <img src="/box3.3.png" alt="" />
+                </div>
+                <div className="postText">
+                  <p className="postDate">September 12 | Read in 6 minutes</p>
+                  <h2>Cacti & Succulent Care Tips</h2>
                   <p className="postInfo">
                     Cacti are succulents are easy care plants for any home or
                     patio.{" "}
@@ -222,28 +238,11 @@ function Home({ productDB }) {
               </div>
               <div className="post">
                 <div className="postImg">
-                  <img src="/box3.1.png" alt="" />
+                  <img src="/box3.4.png" alt="" />
                 </div>
                 <div className="postText">
                   <p className="postDate">September 12 | Read in 6 minutes</p>
-                  <h2>Cactus & Succulent Care Tips</h2>
-                  <p className="postInfo">
-                    Cacti are succulents are easy care plants for any home or
-                    patio.{" "}
-                  </p>
-                  <button>
-                    <p>Read More</p>
-                    <i className="fas fa-arrow-right"></i>
-                  </button>
-                </div>
-              </div>
-              <div className="post">
-                <div className="postImg">
-                  <img src="/box3.1.png" alt="" />
-                </div>
-                <div className="postText">
-                  <p className="postDate">September 12 | Read in 6 minutes</p>
-                  <h2>Cactus & Succulent Care Tips</h2>
+                  <h2>Best Houseplants Room by Room</h2>
                   <p className="postInfo">
                     Cacti are succulents are easy care plants for any home or
                     patio.{" "}

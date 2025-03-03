@@ -20,10 +20,10 @@ function Footer() {
             </div>
             <div className="footerBox">
               <div className="footerBoxImg">
-                <img src="/footerimg1.png" alt="" />
+                <img src="/footerimg2.png" alt="" />
               </div>
               <div className="footerBoxText">
-                <h2>Garden Care</h2>
+                <h2>Plant Renovation</h2>
                 <p>
                   We are an online plant shop offering a wide range of cheap and
                   trendy plants.
@@ -32,10 +32,10 @@ function Footer() {
             </div>
             <div className="footerBox">
               <div className="footerBoxImg">
-                <img src="/footerimg1.png" alt="" />
+                <img src="/footerimg3.png" alt="" />
               </div>
               <div className="footerBoxText">
-                <h2>Garden Care</h2>
+                <h2>Watering Graden</h2>
                 <p>
                   We are an online plant shop offering a wide range of cheap and
                   trendy plants.

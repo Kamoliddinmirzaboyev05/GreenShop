@@ -1,0 +1,5 @@
+.addressPage .container {
+  padding: 60px 0;
+  display: flex;
+  gap: 28px;
+}

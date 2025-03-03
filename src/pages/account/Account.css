@@ -1,0 +1,97 @@
+.accountPage .container {
+  padding: 60px 0;
+  display: flex;
+  gap: 28px;
+}
+.sidebar {
+  width: 330px;
+  background-color: #fbfbfb;
+  padding: 18px;
+}
+.sidebar ul {
+  list-style: none;
+  width: 100%;
+}
+.sidebar ul li a {
+  display: flex;
+  align-items: center;
+  line-height: 45px;
+  gap: 11px;
+  width: 100%;
+  color: #727272;
+  padding-left: 23px;
+}
+.sidebar ul li a.active {
+  background-color: white;
+  border-left: 5px solid #46a358;
+  font-weight: 700;
+  color: #46a358;
+}
+.personalForm .forms {
+  display: flex;
+  align-items: start;
+  gap: 28px;
+}
+.personalForm .forms p{
+    color: #3D3D3D;
+    font-weight: 400;
+    font-size: 15px;
+}
+.personalForm .forms p span{
+    color: red;
+}
+.personalForm form input {
+  width: 417px;
+  border: 1px solid #eaeaea;
+  padding: 10px 15px;
+  border-radius: 3px;
+}
+.formItem {
+  padding-bottom: 30px;
+  position: relative;
+}
+.formItem p {
+  padding-bottom: 10px;
+}
+.changeBtns {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+  padding-top: 10px;
+}
+.removeBtn {
+  background-color: transparent;
+  font-size: 14px;
+  font-weight: 400;
+  color: #3d3d3d;
+}
+.passwordChange {
+  padding-bottom: 20px;
+  font-weight: 500;
+  font-size: 16px;
+}
+.noseePassword {
+  position: absolute;
+  right: 15px;
+  bottom: 38px;
+  width: 20px;
+  height: 20px;
+}
+.noseePassword img {
+  width: 100%;
+}
+.imgIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #eaeaea;
+  background-color: #fbfbfb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logoutItem{
+    border-top: #46A35880 .3px solid;
+    border-left: none !important;
+    background-color: #FBFBFB !important;
+}

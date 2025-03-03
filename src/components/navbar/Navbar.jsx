@@ -42,6 +42,9 @@ function Navbar() {
               <img src="/Logout.svg" alt="" />
               <p>Login</p>
             </button>
+            <Link to={"/account"}>
+            <button><i className="fas fa-user"></i></button>
+            </Link>
           </div>
         </div>
       </nav>

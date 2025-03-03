@@ -5,6 +5,7 @@ import Product from "./pages/product/Product";
 import Home from "./pages/home/Home";
 import Footer from "./components/footer/Footer";
 import ErrorPage from "./pages/errorpage/ErrorPage";
+import Cart from "./pages/cart/Cart";
 
 function App() {
   const [productDB, setProductDB] = useState([
@@ -159,7 +160,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home productDB={productDB} />} />
         <Route path="/product/:id" element={<Product productDB={productDB} />} />
+        <Route path="/cart" element={<Cart/>} />
         <Route path="*" element={<ErrorPage />} />
+
       </Routes>
       <Footer />
     </BrowserRouter>

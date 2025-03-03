@@ -1,3 +1,12 @@
-.errorpage .container img{
-    width: 100%;
+.errorpage .container img {
+  width: 100%;
+  object-fit: contain;
+  height: 100vh;
+  mix-blend-mode: multiply;
+}
+.goHomeBtn{
+    position: absolute;
+    bottom: 10px;
+    z-index: 99;
+    left: 46%;
 }

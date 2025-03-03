@@ -10,9 +10,11 @@ function Navbar() {
     <div className="navbarPage">
       <nav>
         <div className="container">
-          <div className="logo">
-            <img src="/logo.svg" alt="" />
-          </div>
+          <Link to={"/"}>
+            <div className="logo">
+              <img src="/logo.svg" alt="" />
+            </div>
+          </Link>
           <ul className="links">
             <li>
               <NavLink to={"/"}>Home</NavLink>
@@ -29,7 +31,9 @@ function Navbar() {
           </ul>
           <div className="navBtns">
             <i className="fas fa-search"></i>
-            <i className="fa fa-shopping-cart"></i>
+            <Link to={"/cart"}>
+              <i className="fa fa-shopping-cart"></i>
+            </Link>
             <button
               onClick={() => {
                 setIsOpen(true);
@@ -92,9 +96,7 @@ function Navbar() {
         </div>
         <div
           className={
-            isOpenLogin
-              ? "hiddenModal registerPage loginPage"
-              : "registerPage "
+            isOpenLogin ? "hiddenModal registerPage loginPage" : "registerPage "
           }
         >
           <form action="#">

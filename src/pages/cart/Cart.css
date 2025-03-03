@@ -1,0 +1,129 @@
+.cartHero .container {
+  padding-top: 36px;
+  padding-bottom: 87px;
+}
+.cartProducts {
+  display: flex;
+  padding-top: 50px;
+  justify-content: space-between;
+}
+.productQuantityTitle {
+  display: flex;
+  gap: 200px;
+  padding-bottom: 10px;
+  border-bottom: .3px solid #46A35880;
+}
+.valueTitle {
+  display: flex;
+  gap: 75px;
+}
+.products {
+  padding: 20px 0;
+}
+.products .productData {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  background-color: #FBFBFB;
+  padding-right: 20px;
+}
+.productDataImg img{
+  width: 70px;
+  mix-blend-mode: multiply;
+  height: 70px;
+}
+.productDataImg img {
+  width: 100%;
+}
+.productCounter {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.productCounter button {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  padding: 0;
+}
+.prooductDataText h2 {
+  font-size: 16px;
+  font-weight: 500;
+}
+.productNameImg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.cartTotals {
+  width: 330px;
+}
+.mainTotalsTitle {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 16px;
+  padding-bottom: 10px;
+  margin-bottom: 14px;
+  color: #3d3d3d;
+  border-bottom: 1px solid #46A35880;
+}
+.cartTotal p:first-child {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  padding-bottom: 8px;
+}
+.cartTotal form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.cartTotal form input {
+  border: 1px solid #46a358;
+  width: 100%;
+  padding: 10px 15px;
+}
+.cartTotal form button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 10px 15px;
+  height: 38px;
+  margin: 0;
+}
+.cartTotal form {
+  padding-bottom: 30px;
+}
+.cartTotals .row {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+.checkoutBtn {
+  width: 100%;
+}
+.row.shipping {
+  padding-bottom: 30px;
+}
+.cartTotal a {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: #46a358;
+  font-size: 15px;
+  font-weight: 400;
+  padding-top: 14px;
+}
+.bolderValue {
+  font-size: 17px;
+  font-weight: 500;
+  color: #3d3d3d;
+}
+.totalPrice {
+  font-size: 18px;
+  font-weight: 500;
+  color: #46a358;
+}
+.totalPriceKey{
+  font-weight: 700 !important;
+}

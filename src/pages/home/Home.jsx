@@ -108,6 +108,13 @@ function Home({ productDB }) {
                     <Link to={`/product/${item.id}`}>
                       <div className="productBox">
                         <div className="productImg">
+                          <div className="hoverIcons">
+                            <Link to={"/cart"}>
+                            <i className="fas fa-shopping-cart"></i>
+                            </Link>
+                            <i className="fas fa-heart"></i>
+                            <i className="fas fa-search"></i>
+                          </div>
                           <img src={item.img} alt="" />
                         </div>
                         <div className="productText">

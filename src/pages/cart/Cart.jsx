@@ -1,6 +1,14 @@
 import React from "react";
 import "./Cart.css";
 import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+
+// import required modules
+import { Pagination } from "swiper/modules";
 function Cart() {
   window.scrollTo({
     top: 0,
@@ -131,56 +139,148 @@ function Cart() {
               <h2>You may be interested in</h2>
             </div>
             <div className="relatedProductsBlock">
-              <div className="productBox">
-                <div className="productImg">
-                  <img src="/box1.1.png" alt="" />
-                </div>
-                <div className="productText">
-                  <h3>Barberton Daisy</h3>
-                  <p>$119.00</p>
-                </div>
-              </div>
-              <div className="productBox">
-                <div className="productImg">
-                  <img src="/box1.2.png" alt="" />
-                </div>
-                <div className="productText">
-                  <h3>Barberton Daisy</h3>
-                  <p>$119.00</p>
-                </div>
-              </div>
-              <div className="productBox">
-                <div className="productImg">
-                  <img src="/box1.3.png" alt="" />
-                </div>
-                <div className="productText">
-                  <h3>Barberton Daisy</h3>
-                  <p>$119.00</p>
-                </div>
-              </div>
-              <div className="productBox">
-                <div className="productImg">
-                  <img src="/box1.4.png" alt="" />
-                </div>
-                <div className="productText">
-                  <h3>Barberton Daisy</h3>
-                  <p>$119.00</p>
-                </div>
-              </div>
-              <div className="productBox">
-                <div className="productImg">
-                  <img src="/box1.5.png" alt="" />
-                </div>
-                <div className="productText">
-                  <h3>Barberton Daisy</h3>
-                  <p>$119.00</p>
-                </div>
-              </div>
-              <div className="heroDots">
-                <div className="dot"></div>
-                <div className="activeDot"></div>
-                <div className="dot"></div>
-              </div>
+              <Swiper
+                slidesPerView={1}
+                spaceBetween={10}
+                pagination={{
+                  clickable: true,
+                }}
+                breakpoints={{
+                  640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                  },
+                  768: {
+                    slidesPerView: 4,
+                    spaceBetween: 40,
+                  },
+                  1024: {
+                    slidesPerView: 5,
+                    spaceBetween: 50,
+                  },
+                }}
+                modules={[Pagination]}
+                className="mySwiper"
+              >
+                <SwiperSlide>
+                  <div className="productBox">
+                    <div className="productImg">
+                      <img src="/box1.1.png" alt="" />
+                    </div>
+                    <div className="productText">
+                      <h3>Barberton Daisy</h3>
+                      <p>$119.00</p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="productBox">
+                    <div className="productImg">
+                      <img src="/box1.2.png" alt="" />
+                    </div>
+                    <div className="productText">
+                      <h3>Barberton Daisy</h3>
+                      <p>$119.00</p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="productBox">
+                    <div className="productImg">
+                      <img src="/box1.3.png" alt="" />
+                    </div>
+                    <div className="productText">
+                      <h3>Barberton Daisy</h3>
+                      <p>$119.00</p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="productBox">
+                    <div className="productImg">
+                      <img src="/box1.4.png" alt="" />
+                    </div>
+                    <div className="productText">
+                      <h3>Barberton Daisy</h3>
+                      <p>$119.00</p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="productBox">
+                    <div className="productImg">
+                      <img src="/box1.5.png" alt="" />
+                    </div>
+                    <div className="productText">
+                      <h3>Barberton Daisy</h3>
+                      <p>$119.00</p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="productBox">
+                    <div className="productImg">
+                      <img src="/box1.1.png" alt="" />
+                    </div>
+                    <div className="productText">
+                      <h3>Barberton Daisy</h3>
+                      <p>$119.00</p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="productBox">
+                    <div className="productImg">
+                      <img src="/box1.2.png" alt="" />
+                    </div>
+                    <div className="productText">
+                      <h3>Barberton Daisy</h3>
+                      <p>$119.00</p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="productBox">
+                    <div className="productImg">
+                      <img src="/box1.3.png" alt="" />
+                    </div>
+                    <div className="productText">
+                      <h3>Barberton Daisy</h3>
+                      <p>$119.00</p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="productBox">
+                    <div className="productImg">
+                      <img src="/box1.4.png" alt="" />
+                    </div>
+                    <div className="productText">
+                      <h3>Barberton Daisy</h3>
+                      <p>$119.00</p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="productBox">
+                    <div className="productImg">
+                      <img src="/box1.5.png" alt="" />
+                    </div>
+                    <div className="productText">
+                      <h3>Barberton Daisy</h3>
+                      <p>$119.00</p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              </Swiper>
             </div>
           </div>
         </div>

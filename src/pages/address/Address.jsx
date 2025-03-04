@@ -2,13 +2,14 @@ import React from "react";
 import "./Address.css";
 import { Link } from "react-router-dom";
 function Address() {
-  return <div className="addressPage">
-    <div className="container">
+  return (
+    <div className="addressPage">
+      <div className="container">
         <div className="sidebar">
           <h2>My Account</h2>
           <ul>
             <li>
-              <Link  to={"/account"}>
+              <Link to={"/account"}>
                 <i className="fas fa-user fa-bounce"></i>
                 <p>Account Details</p>
               </Link>
@@ -58,7 +59,11 @@ function Address() {
           </ul>
         </div>
         <div className="personalForm">
-          <h2>Personal Information</h2>
+          <h2>Billing Address</h2>
+          <p>
+            The following addresses will be used on the checkout page by
+            default.
+          </p>
           <div className="forms">
             <form action="#">
               <div className="formItem">
@@ -69,44 +74,29 @@ function Address() {
               </div>
               <div className="formItem">
                 <p>
+                  Country / Region<span> *</span>
+                </p>
+                <input type="text" />
+              </div>
+              <div className="formItem">
+                <p>
+                  Street Address<span> *</span>
+                </p>
+                <input type="text" />
+              </div>
+              <div className="formItem">
+                <p>
+                  State<span> *</span>
+                </p>
+                <input type="text" />
+              </div>
+              <div className="formItem">
+                <p>
                   Email address<span> *</span>
                 </p>
                 <input type="text" />
               </div>
-              <div className="formItem">
-                <p>
-                  Username<span> *</span>
-                </p>
-                <input type="text" />
-              </div>
-              <p className="passwordChange">Password change</p>
-              <div className="formItem">
-                <p>
-                  Current password<span> *</span>
-                </p>
-                <input type="text" />
-                <div className="noseePassword">
-                  <img src="/public/nosee.svg" alt="" />
-                </div>
-              </div>
-              <div className="formItem">
-                <p>
-                  New password<span> *</span>
-                </p>
-                <input type="text" />
-                <div className="noseePassword">
-                  <img src="/public/nosee.svg" alt="" />
-                </div>
-              </div>
-              <div className="formItem">
-                <p>
-                  Confirm new password<span> *</span>
-                </p>
-                <input type="text" />
-                <div className="noseePassword">
-                  <img src="/public/nosee.svg" alt="" />
-                </div>
-              </div>
+
               <button>Save Changes</button>
             </form>
             <form action="#">
@@ -116,27 +106,37 @@ function Address() {
                 </p>
                 <input type="text" />
               </div>
+
+              <div className="formItem">
+                <p>
+                  Town / City<span> *</span>
+                </p>
+                <input type="text" />
+              </div>
+              <div className="formItem">
+                <input className="appartment"
+                  type="text"
+                  placeholder="Appartment, suite, unit, etc. (optional)"
+                />
+              </div>
+              <div className="formItem">
+                <p>
+                  Zip<span> *</span>
+                </p>
+                <input type="text" />
+              </div>
               <div className="formItem">
                 <p>
                   Phone Number<span> *</span>
                 </p>
                 <input defaultValue={"+998"} type="text" />
               </div>
-              <div className="photoChange">
-                <p>Photo</p>
-                <div className="changeBtns">
-                  <div className="imgIcon">
-                    <img src="/public/img.svg" alt="" />
-                  </div>
-                  <button>Change</button>
-                  <button className="removeBtn">Remove</button>
-                </div>
-              </div>
             </form>
           </div>
         </div>
       </div>
-  </div>;
+    </div>
+  );
 }
 
 export default Address;

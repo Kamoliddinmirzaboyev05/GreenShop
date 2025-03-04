@@ -19,6 +19,9 @@ nav .links a {
   color: #3d3d3d;
   padding-bottom: 23px;
 }
+nav .links a:hover {
+  color: #46a358;
+}
 nav .links a.active {
   font-weight: 700;
   border-bottom: 3px solid #46a358;

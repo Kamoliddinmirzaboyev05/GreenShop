@@ -6,6 +6,17 @@
 .sidebar {
   width: 330px;
   background-color: #fbfbfb;
+  /* padding: 18px; */
+}
+.sidebar h2,
+.personalForm h2 {
+  padding-bottom: 15px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 16px;
+  color: #3d3d3d;
+}
+.sidebar h2{
   padding: 18px;
 }
 .sidebar ul {
@@ -27,18 +38,19 @@
   font-weight: 700;
   color: #46a358;
 }
+
 .personalForm .forms {
   display: flex;
   align-items: start;
   gap: 28px;
 }
-.personalForm .forms p{
-    color: #3D3D3D;
-    font-weight: 400;
-    font-size: 15px;
+.personalForm .forms p {
+  color: #3d3d3d;
+  font-weight: 400;
+  font-size: 15px;
 }
-.personalForm .forms p span{
-    color: red;
+.personalForm .forms p span {
+  color: red;
 }
 .personalForm form input {
   width: 417px;
@@ -90,8 +102,8 @@
   align-items: center;
   justify-content: center;
 }
-.logoutItem{
-    border-top: #46A35880 .3px solid;
-    border-left: none !important;
-    background-color: #FBFBFB !important;
+.logoutItem {
+  border-top: #46a35880 0.3px solid;
+  border-left: none !important;
+  background-color: #fbfbfb !important;
 }

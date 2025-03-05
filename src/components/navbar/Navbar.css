@@ -32,6 +32,25 @@ nav .links a.active {
   justify-content: center;
   gap: 30px;
 }
+.cartIcon{
+  position: relative;
+}
+.cartCount{
+  position: absolute;
+  top: -6px;
+  right: -5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #46a358;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.cartCount p{
+  font-size: 8px;
+}
 .navBtns .loginBtn {
   display: flex;
   align-items: center;

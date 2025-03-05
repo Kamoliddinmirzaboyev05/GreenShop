@@ -11,15 +11,24 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 function Product({ productDB }) {
   const { id } = useParams();
+
+  // OneProduct Function
   const [oneProduct, setOneProduct] = useState(
     productDB.filter((item) => {
       return id == item.id;
     })
   );
+  // Add product to cart function
+
+
+
+  // To up scroll function
   window.scrollTo({
     top: 0,
     behavior: "smooth",
   });
+  // Start HTML
+
   return (
     <div className="productPage">
       <div className="container">

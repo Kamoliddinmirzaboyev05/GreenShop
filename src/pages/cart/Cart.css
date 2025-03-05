@@ -9,9 +9,20 @@
 }
 .productQuantityTitle {
   display: flex;
-  gap: 200px;
+  gap: 230px;
   padding-bottom: 10px;
   border-bottom: 0.3px solid #46a35880;
+}
+.totalPriceValue{
+  width: 60px;
+}
+.countValue{
+  width: 20px;
+  display: flex;
+  justify-content: center;
+}
+.itemPrice{
+  width: 60px;
 }
 .valueTitle {
   display: flex;
@@ -19,6 +30,21 @@
 }
 .products {
   padding: 20px 0;
+  height: 400px;
+  overflow-y: auto;
+  
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1A2030; /* Qoramtir fon */
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #3d814a,#46a358);
+  border-radius: 10px;
 }
 .products .productData {
   display: flex;
@@ -49,6 +75,7 @@
 .prooductDataText h2 {
   font-size: 16px;
   font-weight: 500;
+  width: 150px;
 }
 .productNameImg {
   display: flex;

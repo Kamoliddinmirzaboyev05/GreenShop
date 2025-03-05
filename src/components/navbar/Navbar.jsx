@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Navbar.css";
 import { Link, NavLink } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ cartProducts }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenLogin, setIsOpenLogin] = useState(true);
 
@@ -31,8 +31,14 @@ function Navbar() {
           </ul>
           <div className="navBtns">
             <i className="fas fa-search"></i>
+
             <Link to={"/cart"}>
-              <i className="fa fa-shopping-cart"></i>
+              <span className="cartIcon">
+                <div className="cartCount">
+                  <p>{cartProducts.length}</p>
+                </div>
+                <i className="fa fa-shopping-cart"></i>
+              </span>
             </Link>
             <button
               onClick={() => {
@@ -43,7 +49,9 @@ function Navbar() {
               <p>Login</p>
             </button>
             <Link to={"/account"}>
-            <button><i className="fas fa-user"></i></button>
+              <button>
+                <i className="fas fa-user"></i>
+              </button>
             </Link>
           </div>
         </div>

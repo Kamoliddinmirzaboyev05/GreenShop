@@ -9,7 +9,7 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination } from "swiper/modules";
-function Cart() {
+function Cart({ cartProducts, productCount }) {
   window.scrollTo({
     top: 0,
     behavior: "smooth",
@@ -36,69 +36,41 @@ function Cart() {
                 </div>
               </div>
               <div className="products">
-                <div className="productData">
-                  <div className="productNameImg">
-                    <div className="productDataImg">
-                      <img src="/box1.1.png" alt="" />
+                {cartProducts.map((item) => {
+                  return (
+                    <div className="productData">
+                      <div className="productNameImg">
+                        <div className="productDataImg">
+                          <img src={item.img} alt="" />
+                        </div>
+                        <div className="prooductDataText">
+                          <h2>{item.title}</h2>
+                          <p>SKU: 1995751877966</p>
+                        </div>
+                      </div>
+                      <p className="itemPrice">$ {item.price}.00</p>
+                      <div className="productCounter">
+                        <button onClick={() => {
+                            productCount(item.id, "minus");
+                          }}>-</button>
+                        <p className="countValue">{item.amount}</p>
+                        <button
+                          onClick={() => {
+                            productCount(item.id, "plus");
+                          }}
+                        >
+                          +
+                        </button>
+                      </div>
+                      <p className="totalPriceValue">
+                        {item.price * item.amount}.00
+                      </p>
+                      <button>
+                        <i className="fas fa-trash"></i>
+                      </button>
                     </div>
-                    <div className="prooductDataText">
-                      <h2>Barberton Daisy</h2>
-                      <p>SKU: 1995751877966</p>
-                    </div>
-                  </div>
-                  <p>$119.00</p>
-                  <div className="productCounter">
-                    <button>-</button>
-                    <p>2</p>
-                    <button>+</button>
-                  </div>
-                  <p>$238.00</p>
-                  <button>
-                    <i className="fas fa-trash"></i>
-                  </button>
-                </div>
-                <div className="productData">
-                  <div className="productNameImg">
-                    <div className="productDataImg">
-                      <img src="/box1.5.png" alt="" />
-                    </div>
-                    <div className="prooductDataText">
-                      <h2>Barberton Daisy</h2>
-                      <p>SKU: 1995751877966</p>
-                    </div>
-                  </div>
-                  <p>$119.00</p>
-                  <div className="productCounter">
-                    <button>-</button>
-                    <p>2</p>
-                    <button>+</button>
-                  </div>
-                  <p>$238.00</p>
-                  <button>
-                    <i className="fas fa-trash"></i>
-                  </button>
-                </div>
-                <div className="productData">
-                  <div className="productNameImg">
-                    <div className="productDataImg">
-                      <img src="/box1.3.png" alt="" />
-                    </div>
-                    <div className="prooductDataText">
-                      <h2>Barberton Daisy</h2>
-                      <p>SKU: 1995751877966</p>
-                    </div>
-                  </div>
-                  <p>$119.00</p>
-                  <div className="productCounter">
-                    <button>-</button>
-                    <p>2</p>
-                    <button>+</button>
-                  </div>
-                  <p>$238.00</p>
-                  <button>
-                    <i className="fas fa-trash"></i>
-                  </button>
-                </div>
+                  );
+                })}
               </div>
             </div>
             <div className="cartTotals">

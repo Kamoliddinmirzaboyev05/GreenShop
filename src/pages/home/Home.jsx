@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Home.css";
 import { Link, NavLink } from "react-router-dom";
-import {Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -10,7 +10,9 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-function Home({ productDB }) {
+function Home({ productDB, addCart, cartProducts }) {
+  // Add poduct to Cart
+
   return (
     <>
       <Swiper
@@ -172,9 +174,14 @@ function Home({ productDB }) {
                         <div className="productBox">
                           <div className="productImg">
                             <div className="hoverIcons">
-                              <Link to={"/cart"}>
+                              <span
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  addCart(item.id);
+                                }}
+                              >
                                 <i className="fas fa-shopping-cart"></i>
-                              </Link>
+                              </span>
                               <i className="fas fa-heart"></i>
                               <i className="fas fa-search"></i>
                             </div>
@@ -182,7 +189,7 @@ function Home({ productDB }) {
                           </div>
                           <div className="productText">
                             <h3>{item.title}</h3>
-                            <p>{item.price}</p>
+                            <p>$ {item.price}.00</p>
                           </div>
                         </div>
                       </Link>

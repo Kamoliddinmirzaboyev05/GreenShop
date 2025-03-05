@@ -15,7 +15,7 @@ function App() {
       id: 1,
       img: "/box1.1.png",
       title: "Barberton Daisy",
-      price: "$119.00",
+      price: 119.0,
       imgs: [
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkVLAJbyGCu3Zk27HVTwQE1yNFSL-FBOs6XNMM_TGLdx_NEKnGrZcOQ2O5ehwziaCnD5E&usqp=CAU",
         "https://baitukas.lt/wp-content/uploads/2021/06/c5fb4c24c4c3389e203a908092c4aa1d-510x510.png",
@@ -31,7 +31,7 @@ function App() {
       id: 2,
       img: "/box1.2.png",
       title: "Angel Wing Begonia",
-      price: "$169.00",
+      price: 169.0,
       imgs: [
         "https://plantsforpetparents.com/cdn/shop/collections/6PALM_NEANTHEBELLA-1_91418a21-bd18-4941-8c78-1b4744ed2366.webp?v=1693561170",
         "https://images.thdstatic.com/productImages/5fad57fb-d5ea-44ba-86da-2c15d5b240c0/svn/costa-farms-house-plants-co-brdfern-3-gp-64_600.jpg",
@@ -47,7 +47,7 @@ function App() {
       id: 3,
       img: "/box1.3.png",
       title: "African Violet",
-      price: "$199.00",
+      price: 199.0,
       imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
       descr:
         "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
@@ -58,7 +58,7 @@ function App() {
       id: 4,
       img: "/box1.4.png",
       title: "Beach Spider Lily",
-      price: "$129.00",
+      price: 129.0,
       imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
       descr:
         "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
@@ -69,7 +69,7 @@ function App() {
       id: 5,
       img: "/box1.5.png",
       title: "Blushing Bromeliad",
-      price: "$139.00",
+      price: 139.0,
       imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
       descr:
         "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
@@ -80,7 +80,7 @@ function App() {
       id: 6,
       img: "/box1.6.png",
       title: "Aluminum Plant",
-      price: "$179.00",
+      price: 179.0,
       imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
       descr:
         "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
@@ -88,10 +88,10 @@ function App() {
       category: "Potter Plants",
     },
     {
-      id: 1,
+      id: 7,
       img: "/box1.7.png",
       title: "Bird's Nest Fern",
-      price: "$99.00",
+      price: 99.0,
       imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
       descr:
         "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
@@ -99,10 +99,10 @@ function App() {
       category: "Potter Plants",
     },
     {
-      id: 1,
+      id: 8,
       img: "/box1.8.png",
       title: "Broadleaf Lady Palm",
-      price: "$59.00",
+      price: 59.0,
       imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
       descr:
         "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
@@ -110,10 +110,10 @@ function App() {
       category: "Potter Plants",
     },
     {
-      id: 1,
+      id: 9,
       img: "/box1.9.png",
       title: "Chinese Evergreen",
-      price: "$39.00",
+      price: 39.0,
       imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
       descr:
         "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
@@ -121,16 +121,57 @@ function App() {
       category: "Potter Plants",
     },
   ]);
+
+  const [cartProducts, setCartProducts] = useState([]);
+  const addCart = (id) => {
+    const product = productDB.filter((item) => {
+      return item.id == id;
+    });
+
+    setCartProducts([...cartProducts, { ...product[0], amount: 1 }]);
+  };
+  const productCount = (id, key) => {
+    var updatedCart = cartProducts.map((item) => {
+      if (item.id != id) {
+        return item;
+      } else {
+        if (key == "plus") {
+          return { ...item, amount: item.amount + 1 };
+        } else {
+          if (item.amount > 1) {
+            return { ...item, amount: item.amount - 1 };
+          } else {
+            return item;
+          }
+        }
+      }
+    });
+    setCartProducts(updatedCart);
+  };
   return (
     <BrowserRouter>
-      <Navbar />
+      <Navbar cartProducts={cartProducts} />
       <Routes>
-        <Route path="/" element={<Home productDB={productDB} />} />
+        <Route
+          path="/"
+          element={
+            <Home
+              addCart={addCart}
+              cartProducts={cartProducts}
+              productDB={productDB}
+            />
+          }
+        />
         <Route
           path="/product/:id"
           element={<Product productDB={productDB} />}
         />
-        <Route path="/cart" element={<Cart />} />
+        <Route
+          path="/cart"
+          element={
+            <Cart productCount={productCount} cartProducts={cartProducts} />
+          }
+        />
         <Route path="/account" element={<Account />} />
         <Route path="/address" element={<Address />} />
         <Route path="*" element={<ErrorPage />} />

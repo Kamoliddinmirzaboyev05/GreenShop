@@ -9,7 +9,7 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination } from "swiper/modules";
-function Cart({ cartProducts, productCount }) {
+function Cart({ removeProduct, cartProducts, productCount }) {
   window.scrollTo({
     top: 0,
     behavior: "smooth",
@@ -50,9 +50,13 @@ function Cart({ cartProducts, productCount }) {
                       </div>
                       <p className="itemPrice">$ {item.price}.00</p>
                       <div className="productCounter">
-                        <button onClick={() => {
+                        <button
+                          onClick={() => {
                             productCount(item.id, "minus");
-                          }}>-</button>
+                          }}
+                        >
+                          -
+                        </button>
                         <p className="countValue">{item.amount}</p>
                         <button
                           onClick={() => {
@@ -65,7 +69,11 @@ function Cart({ cartProducts, productCount }) {
                       <p className="totalPriceValue">
                         {item.price * item.amount}.00
                       </p>
-                      <button>
+                      <button
+                        onClick={() => {
+                          removeProduct(item.id);
+                        }}
+                      >
                         <i className="fas fa-trash"></i>
                       </button>
                     </div>

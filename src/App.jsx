@@ -122,14 +122,25 @@ function App() {
     },
   ]);
 
-  const [cartProducts, setCartProducts] = useState([]);
+  const [cartProducts, setCartProducts] = useState(
+    localStorage.getItem("cartProducts")
+      ? JSON.parse(localStorage.getItem("cartProducts"))
+      : []
+  );
   const addCart = (id) => {
     const product = productDB.filter((item) => {
       return item.id == id;
     });
-
+   
     setCartProducts([...cartProducts, { ...product[0], amount: 1 }]);
   };
+  const removeProduct = (id) => {
+    const filteredProducts = cartProducts.filter((item) => {
+      return id != item.id;
+    });
+    setCartProducts(filteredProducts);
+  };
+  localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
   const productCount = (id, key) => {
     var updatedCart = cartProducts.map((item) => {
       if (item.id != id) {
@@ -169,7 +180,11 @@ function App() {
         <Route
           path="/cart"
           element={
-            <Cart productCount={productCount} cartProducts={cartProducts} />
+            <Cart
+              removeProduct={removeProduct}
+              productCount={productCount}
+              cartProducts={cartProducts}
+            />
           }
         />
         <Route path="/account" element={<Account />} />

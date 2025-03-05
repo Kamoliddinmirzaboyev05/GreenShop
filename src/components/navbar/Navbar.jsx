@@ -35,7 +35,7 @@ function Navbar({ cartProducts }) {
             <Link to={"/cart"}>
               <span className="cartIcon">
                 <div className="cartCount">
-                  <p>{cartProducts.length}</p>
+                  <p>{cartProducts ? cartProducts.length : 0}</p>
                 </div>
                 <i className="fa fa-shopping-cart"></i>
               </span>

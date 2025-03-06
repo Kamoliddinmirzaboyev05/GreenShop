@@ -8,6 +8,7 @@ import ErrorPage from "./pages/errorpage/ErrorPage";
 import Cart from "./pages/cart/Cart";
 import Account from "./pages/account/Account";
 import Address from "./pages/address/Address";
+import Checkout from "./pages/checkout/Checkout";
 
 function App() {
   const [productDB, setProductDB] = useState([
@@ -217,6 +218,7 @@ function App() {
         />
         <Route path="/account" element={<Account />} />
         <Route path="/address" element={<Address />} />
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />

@@ -114,7 +114,9 @@ function Cart({
                   <p className="totalPriceKey">Total</p>
                   <p className="totalPrice">$2,699.00</p>
                 </div>
+                <Link to={"/checkout"}>
                 <button className="checkoutBtn">Proceed To Checkout</button>
+                </Link>
                 <Link to={"/"}>Continue shopping</Link>
               </div>
             </div>

@@ -8,13 +8,20 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 // import required modules
-import { Pagination } from "swiper/modules";
-function Cart({ removeProduct, cartProducts, productCount }) {
+import {  Pagination, Navigation } from "swiper/modules";
+
+function Cart({
+  totalPrice,
+  addCart,
+  productDB,
+  removeProduct,
+  cartProducts,
+  productCount,
+}) {
   window.scrollTo({
     top: 0,
     behavior: "smooth",
   });
-
 
   return (
     <div className="cartPage">
@@ -93,7 +100,7 @@ function Cart({ removeProduct, cartProducts, productCount }) {
                 </form>
                 <div className="row">
                   <p>Subtotal</p>
-                  <p className="bolderValue">$ 1000</p>
+                  <p className="bolderValue">$ {totalPrice}</p>
                 </div>
                 <div className="row">
                   <p>Coupon Discount</p>
@@ -127,6 +134,8 @@ function Cart({ removeProduct, cartProducts, productCount }) {
                 pagination={{
                   clickable: true,
                 }}
+                loop={true}
+                navigation={true}
                 breakpoints={{
                   640: {
                     slidesPerView: 2,
@@ -141,127 +150,50 @@ function Cart({ removeProduct, cartProducts, productCount }) {
                     spaceBetween: 50,
                   },
                 }}
-                modules={[Pagination]}
+                modules={[Pagination, Navigation]}
                 className="mySwiper"
               >
-                <SwiperSlide>
-                  <div className="productBox">
-                    <div className="productImg">
-                      <img src="/box1.1.png" alt="" />
-                    </div>
-                    <div className="productText">
-                      <h3>Barberton Daisy</h3>
-                      <p>$119.00</p>
-                    </div>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  {" "}
-                  <div className="productBox">
-                    <div className="productImg">
-                      <img src="/box1.2.png" alt="" />
-                    </div>
-                    <div className="productText">
-                      <h3>Barberton Daisy</h3>
-                      <p>$119.00</p>
-                    </div>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  {" "}
-                  <div className="productBox">
-                    <div className="productImg">
-                      <img src="/box1.3.png" alt="" />
-                    </div>
-                    <div className="productText">
-                      <h3>Barberton Daisy</h3>
-                      <p>$119.00</p>
-                    </div>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  {" "}
-                  <div className="productBox">
-                    <div className="productImg">
-                      <img src="/box1.4.png" alt="" />
-                    </div>
-                    <div className="productText">
-                      <h3>Barberton Daisy</h3>
-                      <p>$119.00</p>
-                    </div>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  {" "}
-                  <div className="productBox">
-                    <div className="productImg">
-                      <img src="/box1.5.png" alt="" />
-                    </div>
-                    <div className="productText">
-                      <h3>Barberton Daisy</h3>
-                      <p>$119.00</p>
-                    </div>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="productBox">
-                    <div className="productImg">
-                      <img src="/box1.1.png" alt="" />
-                    </div>
-                    <div className="productText">
-                      <h3>Barberton Daisy</h3>
-                      <p>$119.00</p>
-                    </div>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  {" "}
-                  <div className="productBox">
-                    <div className="productImg">
-                      <img src="/box1.2.png" alt="" />
-                    </div>
-                    <div className="productText">
-                      <h3>Barberton Daisy</h3>
-                      <p>$119.00</p>
-                    </div>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  {" "}
-                  <div className="productBox">
-                    <div className="productImg">
-                      <img src="/box1.3.png" alt="" />
-                    </div>
-                    <div className="productText">
-                      <h3>Barberton Daisy</h3>
-                      <p>$119.00</p>
-                    </div>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  {" "}
-                  <div className="productBox">
-                    <div className="productImg">
-                      <img src="/box1.4.png" alt="" />
-                    </div>
-                    <div className="productText">
-                      <h3>Barberton Daisy</h3>
-                      <p>$119.00</p>
-                    </div>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  {" "}
-                  <div className="productBox">
-                    <div className="productImg">
-                      <img src="/box1.5.png" alt="" />
-                    </div>
-                    <div className="productText">
-                      <h3>Barberton Daisy</h3>
-                      <p>$119.00</p>
-                    </div>
-                  </div>
-                </SwiperSlide>
+                {productDB.map((item) => {
+                  return (
+                    <SwiperSlide>
+                      <Link to={`/product/${item.id}`}>
+                        <div className="productBox">
+                          <div className="productImg">
+                            <div className="productDiscount">
+                              <p>{item.discount}% OFF</p>
+                            </div>
+                            <div className="hoverIcons">
+                              <span
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  addCart(item.id);
+                                }}
+                              >
+                                <i className="fas fa-shopping-cart"></i>
+                              </span>
+                              <i className="fas fa-heart"></i>
+                              <i className="fas fa-search"></i>
+                            </div>
+                            <img src={item.img} alt="" />
+                          </div>
+                          <div className="productText">
+                            <h3>{item.title}</h3>
+                            <div className="productPrices">
+                              <p>$ {item.price}.00</p>
+                              <p className="nonActivePrice">
+                                $
+                                {(
+                                  (item.price * 100) /
+                                  (100 - item.discount)
+                                ).toFixed(2)}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    </SwiperSlide>
+                  );
+                })}
               </Swiper>
             </div>
           </div>

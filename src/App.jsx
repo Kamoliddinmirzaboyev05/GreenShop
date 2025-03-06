@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import Product from "./pages/product/Product";
@@ -16,6 +16,7 @@ function App() {
       img: "/box1.1.png",
       title: "Barberton Daisy",
       price: 119.0,
+      discount: 15,
       imgs: [
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkVLAJbyGCu3Zk27HVTwQE1yNFSL-FBOs6XNMM_TGLdx_NEKnGrZcOQ2O5ehwziaCnD5E&usqp=CAU",
         "https://baitukas.lt/wp-content/uploads/2021/06/c5fb4c24c4c3389e203a908092c4aa1d-510x510.png",
@@ -32,6 +33,7 @@ function App() {
       img: "/box1.2.png",
       title: "Angel Wing Begonia",
       price: 169.0,
+      discount: 10,
       imgs: [
         "https://plantsforpetparents.com/cdn/shop/collections/6PALM_NEANTHEBELLA-1_91418a21-bd18-4941-8c78-1b4744ed2366.webp?v=1693561170",
         "https://images.thdstatic.com/productImages/5fad57fb-d5ea-44ba-86da-2c15d5b240c0/svn/costa-farms-house-plants-co-brdfern-3-gp-64_600.jpg",
@@ -48,6 +50,7 @@ function App() {
       img: "/box1.3.png",
       title: "African Violet",
       price: 199.0,
+      discount: 20,
       imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
       descr:
         "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
@@ -59,6 +62,7 @@ function App() {
       img: "/box1.4.png",
       title: "Beach Spider Lily",
       price: 129.0,
+      discount: 12,
       imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
       descr:
         "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
@@ -70,6 +74,7 @@ function App() {
       img: "/box1.5.png",
       title: "Blushing Bromeliad",
       price: 139.0,
+      discount: 8,
       imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
       descr:
         "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
@@ -81,6 +86,7 @@ function App() {
       img: "/box1.6.png",
       title: "Aluminum Plant",
       price: 179.0,
+      discount: 12,
       imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
       descr:
         "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
@@ -92,6 +98,7 @@ function App() {
       img: "/box1.7.png",
       title: "Bird's Nest Fern",
       price: 99.0,
+      discount: 7,
       imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
       descr:
         "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
@@ -103,6 +110,7 @@ function App() {
       img: "/box1.8.png",
       title: "Broadleaf Lady Palm",
       price: 59.0,
+      discount: 5,
       imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
       descr:
         "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
@@ -114,6 +122,7 @@ function App() {
       img: "/box1.9.png",
       title: "Chinese Evergreen",
       price: 39.0,
+      discount: 3,
       imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
       descr:
         "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
@@ -141,6 +150,14 @@ function App() {
       setCartProducts(filteredData);
     }
   };
+  const [totalPrice, setTotalPrice] = useState(0);
+  useEffect(() => {
+    const newTotalPrice = cartProducts.reduce(
+      (sum, item) => sum + item.price * item.amount,
+      0
+    );
+    setTotalPrice(newTotalPrice);
+  }, [cartProducts]);
 
   const removeProduct = (id) => {
     const filteredProducts = cartProducts.filter((item) => {
@@ -189,6 +206,9 @@ function App() {
           path="/cart"
           element={
             <Cart
+              totalPrice={totalPrice}
+              addCart={addCart}
+              productDB={productDB}
               removeProduct={removeProduct}
               productCount={productCount}
               cartProducts={cartProducts}

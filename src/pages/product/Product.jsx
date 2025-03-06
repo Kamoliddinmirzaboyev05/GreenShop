@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Product.css";
-import { NavLink, useParams } from "react-router-dom";
+import { Link, NavLink, useParams } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -8,7 +8,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 // import required modules
-import { Pagination } from "swiper/modules";
+import { Pagination, Navigation } from "swiper/modules";
 function Product({ productDB }) {
   const { id } = useParams();
 
@@ -178,149 +178,76 @@ function Product({ productDB }) {
             <h2>Releted Products</h2>
           </div>
           <div className="relatedProductsBlock">
-            <Swiper
-              slidesPerView={1}
-              spaceBetween={10}
-              pagination={{
-                clickable: true,
-              }}
-              breakpoints={{
-                640: {
-                  slidesPerView: 2,
-                  spaceBetween: 20,
-                },
-                768: {
-                  slidesPerView: 4,
-                  spaceBetween: 40,
-                },
-                1024: {
-                  slidesPerView: 5,
-                  spaceBetween: 50,
-                },
-              }}
-              modules={[Pagination]}
-              className="mySwiper"
-            >
-              <SwiperSlide>
-                <div className="productBox">
-                  <div className="productImg">
-                    <img src="/box1.1.png" alt="" />
-                  </div>
-                  <div className="productText">
-                    <h3>Barberton Daisy</h3>
-                    <p>$119.00</p>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="productBox">
-                  <div className="productImg">
-                    <img src="/box1.2.png" alt="" />
-                  </div>
-                  <div className="productText">
-                    <h3>Barberton Daisy</h3>
-                    <p>$119.00</p>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="productBox">
-                  <div className="productImg">
-                    <img src="/box1.3.png" alt="" />
-                  </div>
-                  <div className="productText">
-                    <h3>Barberton Daisy</h3>
-                    <p>$119.00</p>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="productBox">
-                  <div className="productImg">
-                    <img src="/box1.4.png" alt="" />
-                  </div>
-                  <div className="productText">
-                    <h3>Barberton Daisy</h3>
-                    <p>$119.00</p>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="productBox">
-                  <div className="productImg">
-                    <img src="/box1.5.png" alt="" />
-                  </div>
-                  <div className="productText">
-                    <h3>Barberton Daisy</h3>
-                    <p>$119.00</p>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="productBox">
-                  <div className="productImg">
-                    <img src="/box1.1.png" alt="" />
-                  </div>
-                  <div className="productText">
-                    <h3>Barberton Daisy</h3>
-                    <p>$119.00</p>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="productBox">
-                  <div className="productImg">
-                    <img src="/box1.2.png" alt="" />
-                  </div>
-                  <div className="productText">
-                    <h3>Barberton Daisy</h3>
-                    <p>$119.00</p>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="productBox">
-                  <div className="productImg">
-                    <img src="/box1.3.png" alt="" />
-                  </div>
-                  <div className="productText">
-                    <h3>Barberton Daisy</h3>
-                    <p>$119.00</p>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="productBox">
-                  <div className="productImg">
-                    <img src="/box1.4.png" alt="" />
-                  </div>
-                  <div className="productText">
-                    <h3>Barberton Daisy</h3>
-                    <p>$119.00</p>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="productBox">
-                  <div className="productImg">
-                    <img src="/box1.5.png" alt="" />
-                  </div>
-                  <div className="productText">
-                    <h3>Barberton Daisy</h3>
-                    <p>$119.00</p>
-                  </div>
-                </div>
-              </SwiperSlide>
-            </Swiper>
-          </div>
+              <Swiper
+                slidesPerView={1}
+                spaceBetween={10}
+                pagination={{
+                  clickable: true,
+                }}
+                loop={true}
+                navigation={true}
+                breakpoints={{
+                  640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                  },
+                  768: {
+                    slidesPerView: 4,
+                    spaceBetween: 40,
+                  },
+                  1024: {
+                    slidesPerView: 5,
+                    spaceBetween: 50,
+                  },
+                }}
+              
+                
+                modules={[Pagination, Navigation]}
+                className="mySwiper"
+              >
+                {productDB.map((item) => {
+                  return (
+                    <SwiperSlide>
+                      <Link to={`/product/${item.id}`}>
+                        <div className="productBox">
+                          <div className="productImg">
+                            <div className="productDiscount">
+                              <p>{item.discount}% OFF</p>
+                            </div>
+                            <div className="hoverIcons">
+                              <span
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  addCart(item.id);
+                                }}
+                              >
+                                <i className="fas fa-shopping-cart"></i>
+                              </span>
+                              <i className="fas fa-heart"></i>
+                              <i className="fas fa-search"></i>
+                            </div>
+                            <img src={item.img} alt="" />
+                          </div>
+                          <div className="productText">
+                            <h3>{item.title}</h3>
+                            <div className="productPrices">
+                              <p>$ {item.price}.00</p>
+                              <p className="nonActivePrice">
+                                $
+                                {(
+                                  (item.price * 100) /
+                                  (100 - item.discount)
+                                ).toFixed(2)}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    </SwiperSlide>
+                  );
+                })}
+              </Swiper>
+            </div>
         </div>
       </div>
     </div>

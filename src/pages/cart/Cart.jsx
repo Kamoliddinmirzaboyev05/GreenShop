@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Cart.css";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -14,6 +14,8 @@ function Cart({ removeProduct, cartProducts, productCount }) {
     top: 0,
     behavior: "smooth",
   });
+
+
   return (
     <div className="cartPage">
       <div className="cartHero">
@@ -67,7 +69,7 @@ function Cart({ removeProduct, cartProducts, productCount }) {
                         </button>
                       </div>
                       <p className="totalPriceValue">
-                        {item.price * item.amount}.00
+                        $ {item.price * item.amount}.00
                       </p>
                       <button
                         onClick={() => {
@@ -91,7 +93,7 @@ function Cart({ removeProduct, cartProducts, productCount }) {
                 </form>
                 <div className="row">
                   <p>Subtotal</p>
-                  <p className="bolderValue">$2,683.00</p>
+                  <p className="bolderValue">$ 1000</p>
                 </div>
                 <div className="row">
                   <p>Coupon Discount</p>

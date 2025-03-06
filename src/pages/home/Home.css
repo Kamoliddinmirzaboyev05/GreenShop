@@ -192,6 +192,26 @@ main {
   width: 250px;
   height: 300px;
 }
+.productDiscount {
+  position: absolute;
+  padding: 7px 10px;
+  z-index: 0;
+  text-align: center;
+  color: white;
+  background-color: #46a358;
+  top: 10px;
+  left: 0;
+}
+.productPrices{
+  display: flex;
+  gap: 16px;
+}
+.nonActivePrice{
+  font-size: 18px !important;
+  color: #A5A5A5 !important;
+  font-weight: 500 !important;
+  text-decoration: line-through;
+}
 .productImg {
   width: 100%;
   display: flex;

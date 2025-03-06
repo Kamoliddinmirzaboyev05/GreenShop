@@ -128,12 +128,20 @@ function App() {
       : []
   );
   const addCart = (id) => {
-    const product = productDB.filter((item) => {
-      return item.id == id;
-    });
-   
-    setCartProducts([...cartProducts, { ...product[0], amount: 1 }]);
+    const isHave = cartProducts.find((product) => product.id == id);
+    if (!isHave) {
+      const product = productDB.filter((item) => {
+        return item.id == id;
+      });
+      setCartProducts([...cartProducts, { ...product[0], amount: 1 }]);
+    } else {
+      const filteredData = cartProducts.filter((item) => {
+        return item.id != id;
+      });
+      setCartProducts(filteredData);
+    }
   };
+
   const removeProduct = (id) => {
     const filteredProducts = cartProducts.filter((item) => {
       return id != item.id;

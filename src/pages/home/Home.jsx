@@ -173,6 +173,9 @@ function Home({ productDB, addCart, cartProducts }) {
                       <Link to={`/product/${item.id}`}>
                         <div className="productBox">
                           <div className="productImg">
+                            <div className="productDiscount">
+                              <p>{item.discount}% OFF</p>
+                            </div>
                             <div className="hoverIcons">
                               <span
                                 onClick={(e) => {
@@ -189,7 +192,12 @@ function Home({ productDB, addCart, cartProducts }) {
                           </div>
                           <div className="productText">
                             <h3>{item.title}</h3>
-                            <p>$ {item.price}.00</p>
+                            <div className="productPrices">
+                              <p>$ {item.price}.00</p>
+                              <p className="nonActivePrice">
+                                ${((item.price * 100) / (100 - item.discount)).toFixed(2)}
+                              </p>
+                            </div>
                           </div>
                         </div>
                       </Link>

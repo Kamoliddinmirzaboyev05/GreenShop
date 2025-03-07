@@ -11,6 +11,8 @@ import "swiper/css/pagination";
 import {  Pagination, Navigation } from "swiper/modules";
 
 function Cart({
+  totalShipping,
+  totalDiscount,
   totalPrice,
   addCart,
   productDB,
@@ -100,15 +102,15 @@ function Cart({
                 </form>
                 <div className="row">
                   <p>Subtotal</p>
-                  <p className="bolderValue">$ {totalPrice}</p>
+                  <p className="bolderValue">$ {totalPrice}.00</p>
                 </div>
                 <div className="row">
                   <p>Coupon Discount</p>
-                  <p>(-) 00.00</p>
+                  <p>(-) {totalDiscount.toFixed(2)}</p>
                 </div>
                 <div className="row shipping">
                   <p>Shipping</p>
-                  <p className="bolderValue">$16.00</p>
+                  <p className="bolderValue">${totalShipping}.00</p>
                 </div>
                 <div className="row">
                   <p className="totalPriceKey">Total</p>

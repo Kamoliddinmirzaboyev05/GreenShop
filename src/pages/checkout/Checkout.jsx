@@ -1,7 +1,16 @@
 import React from "react";
 import "./Checkout.css";
 import { Link } from "react-router-dom";
-function Checkout() {
+function Checkout(
+  totalShipping,
+  totalDiscount,
+  totalPrice,
+  addCart,
+  productDB,
+  removeProduct,
+  cartProducts,
+  productCount,
+) {
   return (
     <div className="checkoutPage">
       <div className="container">

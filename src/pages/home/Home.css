@@ -202,13 +202,13 @@ main {
   top: 10px;
   left: 0;
 }
-.productPrices{
+.productPrices {
   display: flex;
   gap: 16px;
 }
-.nonActivePrice{
+.nonActivePrice {
   font-size: 15px !important;
-  color: #A5A5A5 !important;
+  color: #a5a5a5 !important;
   font-weight: 500 !important;
   text-decoration: line-through;
 }
@@ -377,6 +377,8 @@ main {
   justify-content: center;
   z-index: 999;
   gap: 30px;
+  transition: all .5s ease;
+
 }
 .hoverIcons i {
   width: 40px;
@@ -391,7 +393,10 @@ main {
 .hoverIcons i:hover {
   color: #46a358;
 }
-
+.hoverIcons i:first-child:active {
+  background-color: green;
+  color: white;
+}
 /* Slider */
 
 #app {

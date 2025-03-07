@@ -137,6 +137,8 @@ function App() {
       ? JSON.parse(localStorage.getItem("cartProducts"))
       : []
   );
+
+  // Add product to cart funtction
   const addCart = (id) => {
     const isHave = cartProducts.find((product) => product.id == id);
     if (!isHave) {
@@ -152,6 +154,7 @@ function App() {
     }
   };
   const [totalPrice, setTotalPrice] = useState(0);
+  // calculate total price function
   useEffect(() => {
     const newTotalPrice = cartProducts.reduce(
       (sum, item) => sum + item.price * item.amount,
@@ -159,13 +162,31 @@ function App() {
     );
     setTotalPrice(newTotalPrice);
   }, [cartProducts]);
-
+  // remove product function
   const removeProduct = (id) => {
     const filteredProducts = cartProducts.filter((item) => {
       return id != item.id;
     });
     setCartProducts(filteredProducts);
   };
+
+  //calculate dic=scount function
+  const [totalDiscount, setTotalDiscount] = useState(0);
+  useEffect(() => {
+    const discount = cartProducts.reduce(
+      (sum, item) => sum + (item.price * item.discount * item.amount) / 100,
+      0
+    );
+    setTotalDiscount(discount);
+  }, [cartProducts]);
+
+  // calculate basic total price
+
+  const [totalShipping, setTotalShipping] = useState(0);
+  useEffect(() => {
+    const shipping = cartProducts.reduce((sum, item) => sum + item.amount, 0);
+    setTotalShipping(shipping);
+  }, [cartProducts]);
   localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
   const productCount = (id, key) => {
     var updatedCart = cartProducts.map((item) => {
@@ -207,6 +228,8 @@ function App() {
           path="/cart"
           element={
             <Cart
+              totalShipping={totalShipping}
+              totalDiscount={totalDiscount}
               totalPrice={totalPrice}
               addCart={addCart}
               productDB={productDB}
@@ -218,7 +241,21 @@ function App() {
         />
         <Route path="/account" element={<Account />} />
         <Route path="/address" element={<Address />} />
-        <Route path="/checkout" element={<Checkout />} />
+        <Route
+          path="/checkout"
+          element={
+            <Checkout
+              totalShipping={totalShipping}
+              totalDiscount={totalDiscount}
+              totalPrice={totalPrice}
+              addCart={addCart}
+              productDB={productDB}
+              removeProduct={removeProduct}
+              productCount={productCount}
+              cartProducts={cartProducts}
+            />
+          }
+        />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />

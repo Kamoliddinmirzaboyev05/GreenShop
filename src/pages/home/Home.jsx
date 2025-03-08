@@ -10,11 +10,12 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import ProductCard from "../../components/productcard/ProductCard";
 function Home({ productDB, addCart, cartProducts }) {
   // Add poduct to Cart
 
   return (
-    <>
+    <div className="page">
       <Swiper
         slidesPerView={1}
         spaceBetween={30}
@@ -169,39 +170,7 @@ function Home({ productDB, addCart, cartProducts }) {
                 </div>
                 <div className="productsBlock">
                   {productDB.map((item) => {
-                    return (
-                      <Link to={`/product/${item.id}`}>
-                        <div className="productBox">
-                          <div className="productImg">
-                            <div className="productDiscount">
-                              <p>{item.discount}% OFF</p>
-                            </div>
-                            <div className="hoverIcons">
-                              <span
-                                onClick={(e) => {
-                                  e.preventDefault();
-                                  addCart(item.id);
-                                }}
-                              >
-                                <i className="fas fa-shopping-cart"></i>
-                              </span>
-                              <i className="fas fa-heart"></i>
-                              <i className="fas fa-search"></i>
-                            </div>
-                            <img src={item.img} alt="" />
-                          </div>
-                          <div className="productText">
-                            <h3>{item.title}</h3>
-                            <div className="productPrices">
-                              <p>$ {item.price}.00</p>
-                              <p className="nonActivePrice">
-                                ${((item.price * 100) / (100 - item.discount)).toFixed(2)}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </Link>
-                    );
+                    return <ProductCard item={item} addCart={addCart} />;
                   })}
                 </div>
                 <div className="pageNum">
@@ -336,7 +305,7 @@ function Home({ productDB, addCart, cartProducts }) {
           </section>
         </main>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Cart.css";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -8,7 +8,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 // import required modules
-import {  Pagination, Navigation } from "swiper/modules";
+import { Pagination, Navigation } from "swiper/modules";
+import ProductCard from "../../components/productcard/ProductCard";
 
 function Cart({
   totalShipping,
@@ -20,10 +21,12 @@ function Cart({
   cartProducts,
   productCount,
 }) {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
 
   return (
     <div className="cartPage">
@@ -117,7 +120,7 @@ function Cart({
                   <p className="totalPrice">$2,699.00</p>
                 </div>
                 <Link to={"/checkout"}>
-                <button className="checkoutBtn">Proceed To Checkout</button>
+                  <button className="checkoutBtn">Proceed To Checkout</button>
                 </Link>
                 <Link to={"/"}>Continue shopping</Link>
               </div>
@@ -160,41 +163,7 @@ function Cart({
                 {productDB.map((item) => {
                   return (
                     <SwiperSlide>
-                      <Link to={`/product/${item.id}`}>
-                        <div className="productBox">
-                          <div className="productImg">
-                            <div className="productDiscount">
-                              <p>{item.discount}% OFF</p>
-                            </div>
-                            <div className="hoverIcons">
-                              <span
-                                onClick={(e) => {
-                                  e.preventDefault();
-                                  addCart(item.id);
-                                }}
-                              >
-                                <i className="fas fa-shopping-cart"></i>
-                              </span>
-                              <i className="fas fa-heart"></i>
-                              <i className="fas fa-search"></i>
-                            </div>
-                            <img src={item.img} alt="" />
-                          </div>
-                          <div className="productText">
-                            <h3>{item.title}</h3>
-                            <div className="productPrices">
-                              <p>$ {item.price}.00</p>
-                              <p className="nonActivePrice">
-                                $
-                                {(
-                                  (item.price * 100) /
-                                  (100 - item.discount)
-                                ).toFixed(2)}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </Link>
+                      <ProductCard item={item} addCart={addCart} />
                     </SwiperSlide>
                   );
                 })}

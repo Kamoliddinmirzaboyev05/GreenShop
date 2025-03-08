@@ -6,6 +6,11 @@ nav .container {
 }
 nav {
   border-bottom: 0.3px solid #46a358;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  background-color: white;
+  backdrop-filter: blur(90px);
 }
 nav .links {
   display: flex;
@@ -70,6 +75,7 @@ nav .links a.active {
   background-color: rgba(0, 0, 0, 0.368);
   inset: 0;
   display: flex;
+  padding-top: 80px;
   align-items: center;
   justify-content: center;
   flex-direction: column;

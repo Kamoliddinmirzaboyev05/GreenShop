@@ -9,7 +9,7 @@ import Cart from "./pages/cart/Cart";
 import Account from "./pages/account/Account";
 import Address from "./pages/address/Address";
 import Checkout from "./pages/checkout/Checkout";
-
+import "./App.css";
 function App() {
   const [productDB, setProductDB] = useState([
     {
@@ -17,7 +17,7 @@ function App() {
       img: "/box1.1.png",
       title: "Barberton Daisy",
       price: 119.0,
-      discount: 15,
+      discount: null,
       imgs: [
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkVLAJbyGCu3Zk27HVTwQE1yNFSL-FBOs6XNMM_TGLdx_NEKnGrZcOQ2O5ehwziaCnD5E&usqp=CAU",
         "https://baitukas.lt/wp-content/uploads/2021/06/c5fb4c24c4c3389e203a908092c4aa1d-510x510.png",
@@ -75,7 +75,7 @@ function App() {
       img: "/box1.5.png",
       title: "Blushing Bromeliad",
       price: 139.0,
-      discount: 8,
+      discount: null,
       imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
       descr:
         "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
@@ -87,7 +87,7 @@ function App() {
       img: "/box1.6.png",
       title: "Aluminum Plant",
       price: 179.0,
-      discount: 12,
+      discount: null,
       imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
       descr:
         "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
@@ -111,7 +111,7 @@ function App() {
       img: "/box1.8.png",
       title: "Broadleaf Lady Palm",
       price: 59.0,
-      discount: 5,
+      discount: null,
       imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
       descr:
         "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
@@ -222,7 +222,7 @@ function App() {
         />
         <Route
           path="/product/:id"
-          element={<Product productDB={productDB} />}
+          element={<Product productDB={productDB} addCart={addCart} />}
         />
         <Route
           path="/cart"

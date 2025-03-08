@@ -21,6 +21,16 @@ function Cart({
   cartProducts,
   productCount,
 }) {
+  const [couponDiscount, setCouponDiscount] = useState(0);
+  const [coupon, setCoupon] = useState();
+  const checkCoupon = () => {
+    setCoupon("");
+    if (coupon == "codial") {
+      setCouponDiscount(10);
+    } else {
+      setCouponDiscount(0);
+    }
+  };
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -100,16 +110,33 @@ function Cart({
               <div className="cartTotal">
                 <p>Coupon Apply</p>
                 <form action="#">
-                  <input type="text" placeholder="Enter coupon code here..." />
-                  <button>Apply</button>
+                  <input
+                    value={coupon}
+                    type="text"
+                    onInput={(e) => {
+                      setCoupon(e.target.value);
+                    }}
+                    placeholder="Enter coupon code here..."
+                  />
+                  <button
+                    onClick={() => {
+                      checkCoupon();
+                    }}
+                  >
+                    Apply
+                  </button>
                 </form>
                 <div className="row">
                   <p>Subtotal</p>
                   <p className="bolderValue">$ {totalPrice}.00</p>
                 </div>
                 <div className="row">
+                  <p>Product Discount</p>
+                  <p>(-) {totalDiscount.toFixed(2)} $</p>
+                </div>
+                <div className="row">
                   <p>Coupon Discount</p>
-                  <p>(-) {totalDiscount.toFixed(2)}</p>
+                  <p>(-) {couponDiscount} %</p>
                 </div>
                 <div className="row shipping">
                   <p>Shipping</p>
@@ -117,7 +144,12 @@ function Cart({
                 </div>
                 <div className="row">
                   <p className="totalPriceKey">Total</p>
-                  <p className="totalPrice">$2,699.00</p>
+                  <div className="totalPrices">
+                    <p className="totalPrice">
+                      ${(totalPrice + totalShipping) * (100 - couponDiscount)/100}.00
+                    </p>
+                    <p className="disabledTotalPrice">${(totalPrice + totalShipping)}.00</p>
+                  </div>
                 </div>
                 <Link to={"/checkout"}>
                   <button className="checkoutBtn">Proceed To Checkout</button>

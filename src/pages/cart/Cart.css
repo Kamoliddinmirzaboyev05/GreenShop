@@ -16,6 +16,10 @@
 .totalPriceValue {
   width: 75px;
 }
+.disabledTotalPrice{
+  color: #858585;
+  text-decoration: line-through;
+}
 .countValue {
   width: 20px;
   display: flex;
@@ -148,9 +152,16 @@
   font-weight: 500;
   color: #3d3d3d;
 }
+.totalPrices{
+  position: relative;
+}
+.disabledTotalPrice{
+  position: absolute;
+  right: 0;
+}
 .totalPrice {
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 700 !important;
   color: #46a358;
 }
 .totalPriceKey {

@@ -205,6 +205,21 @@ function App() {
       }
     });
     setCartProducts(updatedCart);
+    // calculate coupon deiscount function
+  };
+  const [couponDiscount, setCouponDiscount] = useState(
+    localStorage.getItem("couponDiscount")
+      ? localStorage.getItem("couponDiscount")
+      : 0
+  );
+  const [couponCode, setCouponCode] = useState("");
+  const checkCoupon = (coupon) => {
+    if (coupon == "codial") {
+      setCouponDiscount(10);
+    } else {
+      setCouponDiscount(0);
+      setCouponCode("");
+    }
   };
   return (
     <BrowserRouter>
@@ -228,6 +243,9 @@ function App() {
           path="/cart"
           element={
             <Cart
+              couponCode={couponCode}
+              checkCoupon={checkCoupon}
+              couponDiscount={couponDiscount}
               totalShipping={totalShipping}
               totalDiscount={totalDiscount}
               totalPrice={totalPrice}
@@ -245,14 +263,11 @@ function App() {
           path="/checkout"
           element={
             <Checkout
-              totalShipping={totalShipping}
-              totalDiscount={totalDiscount}
-              totalPrice={totalPrice}
-              addCart={addCart}
-              productDB={productDB}
-              removeProduct={removeProduct}
-              productCount={productCount}
+              couponDiscount={couponDiscount}
               cartProducts={cartProducts}
+              totalPrice={totalPrice}
+              totalDiscount={totalDiscount}
+              totalShipping={totalShipping}
             />
           }
         />

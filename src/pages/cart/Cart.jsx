@@ -20,17 +20,13 @@ function Cart({
   removeProduct,
   cartProducts,
   productCount,
+  couponDiscount,
+  checkCoupon,
+  couponCode,
 }) {
-  const [couponDiscount, setCouponDiscount] = useState(0);
+  localStorage.setItem("couponDiscount", couponDiscount);
   const [coupon, setCoupon] = useState();
-  const checkCoupon = () => {
-    setCoupon("");
-    if (coupon == "codial") {
-      setCouponDiscount(10);
-    } else {
-      setCouponDiscount(0);
-    }
-  };
+  const [inputValue, setInputValue] = useState(coupon);
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -111,7 +107,7 @@ function Cart({
                 <p>Coupon Apply</p>
                 <form action="#">
                   <input
-                    value={coupon}
+                    value={inputValue}
                     type="text"
                     onInput={(e) => {
                       setCoupon(e.target.value);
@@ -120,7 +116,8 @@ function Cart({
                   />
                   <button
                     onClick={() => {
-                      checkCoupon();
+                      checkCoupon(coupon);
+                      // setInputValue("");
                     }}
                   >
                     Apply
@@ -146,9 +143,16 @@ function Cart({
                   <p className="totalPriceKey">Total</p>
                   <div className="totalPrices">
                     <p className="totalPrice">
-                      ${(totalPrice + totalShipping) * (100 - couponDiscount)/100}.00
+                      $
+                      {((totalPrice + totalShipping) * (100 - couponDiscount)) /
+                        100}
+                      .00
                     </p>
-                    <p className="disabledTotalPrice">${(totalPrice + totalShipping)}.00</p>
+                    {couponDiscount > 0 && (
+                      <p className="disabledTotalPrice">
+                        ${totalPrice + totalShipping}.00
+                      </p>
+                    )}
                   </div>
                 </div>
                 <Link to={"/checkout"}>

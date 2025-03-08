@@ -31,7 +31,9 @@ function Navbar({ cartProducts }) {
           </ul>
           <div className="navBtns">
             <i className="fas fa-search"></i>
-
+              <Link>
+              <i className="fa-regular fa-heart"></i>
+              </Link>
             <Link to={"/cart"}>
               <span className="cartIcon">
                 <div className="cartCount">
@@ -82,10 +84,10 @@ function Navbar({ cartProducts }) {
               Enter your username and password to login.
             </p>
             <div className="loginInput">
-              <input type="text" placeholder="almamun_uxui@outlook.com" />
+              <input required type="text" placeholder="almamun_uxui@outlook.com" />
             </div>
             <div className="passInput">
-              <input type="password" placeholder="*******" />
+              <input required type="password" placeholder="*******" />
               <img src="/nosee.svg" alt="" />
             </div>
             <p className="forgot">Forgot Password?</p>
@@ -134,17 +136,17 @@ function Navbar({ cartProducts }) {
               Enter your email and password to register.
             </p>
             <div className="loginInput">
-              <input type="text" placeholder="Username" />
+              <input required type="text" placeholder="Username" />
             </div>
             <div className="passInput">
-              <input type="password" placeholder="Enter your email address" />
+              <input required type="password" placeholder="Enter your email address" />
             </div>
             <div className="passInput">
-              <input type="password" placeholder="Password" />
+              <input required type="password" placeholder="Password" />
               <img src="/nosee.svg" alt="" />
             </div>
             <div className="loginInput">
-              <input type="text" placeholder="Confirm Password" />
+              <input required type="text" placeholder="Confirm Password" />
             </div>
             <p className="forgot">Forgot Password?</p>
             <button className="loginBtn">Login</button>

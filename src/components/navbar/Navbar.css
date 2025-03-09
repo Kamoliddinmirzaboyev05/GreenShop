@@ -37,10 +37,10 @@ nav .links a.active {
   justify-content: center;
   gap: 30px;
 }
-.cartIcon{
+.cartIcon {
   position: relative;
 }
-.cartCount{
+.cartCount {
   position: absolute;
   top: -6px;
   right: -5px;
@@ -53,7 +53,7 @@ nav .links a.active {
   justify-content: center;
   color: white;
 }
-.cartCount p{
+.cartCount p {
   font-size: 8px;
 }
 .navBtns .loginBtn {
@@ -68,6 +68,12 @@ nav .links a.active {
   font-weight: 500;
   color: white;
   gap: 4px;
+}
+.navBtns i {
+  color: #3d3d3d;
+}
+.navBtns i:hover {
+  color: #46a358;
 }
 .register {
   position: fixed;

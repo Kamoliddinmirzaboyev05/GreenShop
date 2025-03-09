@@ -10,6 +10,7 @@ import Account from "./pages/account/Account";
 import Address from "./pages/address/Address";
 import Checkout from "./pages/checkout/Checkout";
 import "./App.css";
+import Liked from "./pages/liked/Liked";
 function App() {
   const [productDB, setProductDB] = useState([
     {
@@ -17,6 +18,7 @@ function App() {
       img: "/box1.1.png",
       title: "Barberton Daisy",
       price: 119.0,
+      liked: false,
       discount: null,
       imgs: [
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkVLAJbyGCu3Zk27HVTwQE1yNFSL-FBOs6XNMM_TGLdx_NEKnGrZcOQ2O5ehwziaCnD5E&usqp=CAU",
@@ -34,6 +36,7 @@ function App() {
       img: "/box1.2.png",
       title: "Angel Wing Begonia",
       price: 169.0,
+      liked: false,
       discount: 10,
       imgs: [
         "https://plantsforpetparents.com/cdn/shop/collections/6PALM_NEANTHEBELLA-1_91418a21-bd18-4941-8c78-1b4744ed2366.webp?v=1693561170",
@@ -51,6 +54,7 @@ function App() {
       img: "/box1.3.png",
       title: "African Violet",
       price: 199.0,
+      liked: false,
       discount: 20,
       imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
       descr:
@@ -63,6 +67,7 @@ function App() {
       img: "/box1.4.png",
       title: "Beach Spider Lily",
       price: 129.0,
+      liked: false,
       discount: 12,
       imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
       descr:
@@ -75,6 +80,7 @@ function App() {
       img: "/box1.5.png",
       title: "Blushing Bromeliad",
       price: 139.0,
+      liked: false,
       discount: null,
       imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
       descr:
@@ -87,6 +93,7 @@ function App() {
       img: "/box1.6.png",
       title: "Aluminum Plant",
       price: 179.0,
+      liked: false,
       discount: null,
       imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
       descr:
@@ -99,6 +106,7 @@ function App() {
       img: "/box1.7.png",
       title: "Bird's Nest Fern",
       price: 99.0,
+      liked: false,
       discount: 7,
       imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
       descr:
@@ -111,6 +119,7 @@ function App() {
       img: "/box1.8.png",
       title: "Broadleaf Lady Palm",
       price: 59.0,
+      liked: false,
       discount: null,
       imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
       descr:
@@ -123,6 +132,7 @@ function App() {
       img: "/box1.9.png",
       title: "Chinese Evergreen",
       price: 39.0,
+      liked: false,
       discount: 3,
       imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
       descr:
@@ -153,6 +163,23 @@ function App() {
       setCartProducts(filteredData);
     }
   };
+  // Add to liked products
+  const [likedProducts, setLikedProducts] = useState([]);
+  const addToLiked = (id) => {
+    const isHave = likedProducts.find((product) => product.id == id);
+    if (!isHave) {
+      const likedProduct = productDB.filter((item) => {
+        return id == item.id;
+      });
+      setLikedProducts([...likedProducts, { ...likedProduct[0], liked: true }]);
+    }else{
+      const filteredData = likedProducts.filter((item) => {
+        return item.id != id;
+      });
+      setLikedProducts(filteredData);
+    }
+  };
+
   const [totalPrice, setTotalPrice] = useState(0);
   // calculate total price function
   useEffect(() => {
@@ -207,6 +234,8 @@ function App() {
     setCartProducts(updatedCart);
     // calculate coupon deiscount function
   };
+  // claculate coupon discount
+
   const [couponDiscount, setCouponDiscount] = useState(
     localStorage.getItem("couponDiscount")
       ? localStorage.getItem("couponDiscount")
@@ -223,12 +252,13 @@ function App() {
   };
   return (
     <BrowserRouter>
-      <Navbar cartProducts={cartProducts} />
+      <Navbar likedProducts={likedProducts} cartProducts={cartProducts} />
       <Routes>
         <Route
           path="/"
           element={
             <Home
+              addToLiked={addToLiked}
               addCart={addCart}
               cartProducts={cartProducts}
               productDB={productDB}
@@ -259,6 +289,10 @@ function App() {
         />
         <Route path="/account" element={<Account />} />
         <Route path="/address" element={<Address />} />
+        <Route
+          path="/liked"
+          element={<Liked addToLiked={addToLiked} likedProducts={likedProducts} />}
+        />
         <Route
           path="/checkout"
           element={

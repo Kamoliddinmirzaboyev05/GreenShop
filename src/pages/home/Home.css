@@ -393,7 +393,7 @@ main {
 .hoverIcons i:hover {
   color: #46a358;
 }
-.hoverIcons i:first-child:active {
+.hoverIcons i:active {
   background-color: green;
   color: white;
 }

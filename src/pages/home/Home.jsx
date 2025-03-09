@@ -11,7 +11,12 @@ import "swiper/css/navigation";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import ProductCard from "../../components/productcard/ProductCard";
-function Home({ productDB, addCart, cartProducts }) {
+function Home({
+  productDB,
+  addCart,
+  cartProducts,
+  addToLiked = { addToLiked },
+}) {
   // Add poduct to Cart
 
   return (
@@ -170,7 +175,13 @@ function Home({ productDB, addCart, cartProducts }) {
                 </div>
                 <div className="productsBlock">
                   {productDB.map((item) => {
-                    return <ProductCard item={item} addCart={addCart} />;
+                    return (
+                      <ProductCard
+                        item={item}
+                        addCart={addCart}
+                        addToLiked={addToLiked}
+                      />
+                    );
                   })}
                 </div>
                 <div className="pageNum">

@@ -58,45 +58,49 @@ function Cart({
               <div className="products">
                 {cartProducts.map((item) => {
                   return (
-                    <div className="productData">
-                      <div className="productNameImg">
-                        <div className="productDataImg">
-                          <img src={item.img} alt="" />
+                    <Link to={`/product/${item.id}`}>
+                      <div className="productData">
+                        <div className="productNameImg">
+                          <div className="productDataImg">
+                            <img src={item.img} alt="" />
+                          </div>
+                          <div className="prooductDataText">
+                            <h2>{item.title}</h2>
+                            <p>SKU: 1995751877966</p>
+                          </div>
                         </div>
-                        <div className="prooductDataText">
-                          <h2>{item.title}</h2>
-                          <p>SKU: 1995751877966</p>
+                        <p className="itemPrice">$ {item.price}.00</p>
+                        <div className="productCounter">
+                          <button
+                            onClick={(e) => {
+                              e.preventDefault();
+                              productCount(item.id, "minus");
+                            }}
+                          >
+                            -
+                          </button>
+                          <p className="countValue">{item.amount}</p>
+                          <button
+                            onClick={(e) => {
+                              e.preventDefault();
+                              productCount(item.id, "plus");
+                            }}
+                          >
+                            +
+                          </button>
                         </div>
-                      </div>
-                      <p className="itemPrice">$ {item.price}.00</p>
-                      <div className="productCounter">
+                        <p className="totalPriceValue">
+                          $ {item.price * item.amount}.00
+                        </p>
                         <button
                           onClick={() => {
-                            productCount(item.id, "minus");
+                            removeProduct(item.id);
                           }}
                         >
-                          -
-                        </button>
-                        <p className="countValue">{item.amount}</p>
-                        <button
-                          onClick={() => {
-                            productCount(item.id, "plus");
-                          }}
-                        >
-                          +
+                          <i className="fas fa-trash"></i>
                         </button>
                       </div>
-                      <p className="totalPriceValue">
-                        $ {item.price * item.amount}.00
-                      </p>
-                      <button
-                        onClick={() => {
-                          removeProduct(item.id);
-                        }}
-                      >
-                        <i className="fas fa-trash"></i>
-                      </button>
-                    </div>
+                    </Link>
                   );
                 })}
               </div>

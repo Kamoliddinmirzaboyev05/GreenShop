@@ -6,6 +6,11 @@ function ProductCard({ item, addCart, addToLiked }) {
     <Link to={`/product/${item.id}`}>
       <div className="productBox">
         <div className="productImg">
+          {item.liked == true && (
+            <span className="likedIcon">
+              <i className="fas fa-heart"></i>
+            </span>
+          )}
           {item.discount && (
             <div className="productDiscount">
               <p>{item.discount}% OFF</p>
@@ -19,15 +24,16 @@ function ProductCard({ item, addCart, addToLiked }) {
                 addCart(item.id);
               }}
             >
-              <i className="fas fa-shopping-cart"></i>
+              <i  className={item.incart ? "fas fa-shopping-cart likedActive" : "fas fa-shopping-cart"}></i>
             </span>
-
             <i
               onClick={(e) => {
                 e.preventDefault();
                 addToLiked(item.id);
               }}
-              className={item.liked ? "fas fa-heart" : "fa-regular fa-heart"}
+              className={
+                item.liked ? "fas fa-heart likedActive" : "fa-regular fa-heart"
+              }
             ></i>
             <i className="fas fa-search"></i>
           </div>
@@ -37,9 +43,11 @@ function ProductCard({ item, addCart, addToLiked }) {
           <h3>{item.title}</h3>
           <div className="productPrices">
             <p>$ {item.price}.00</p>
-            <p className="nonActivePrice">
-              ${((item.price * 100) / (100 - item.discount)).toFixed(2)}
-            </p>
+            {item.discount && (
+              <p className="nonActivePrice">
+                ${((item.price * 100) / (100 - item.discount)).toFixed(2)}
+              </p>
+            )}
           </div>
         </div>
       </div>

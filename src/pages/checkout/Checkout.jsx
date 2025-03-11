@@ -11,6 +11,11 @@ function Checkout({
   return (
     <div className="page">
       <div className="checkoutPage">
+        <div className="orderModalBack">
+          <div className="orderModal">
+            
+          </div>
+        </div>
         <div className="container">
           <p className="mainWay">
             <span>Home</span> / Shop / Checkout

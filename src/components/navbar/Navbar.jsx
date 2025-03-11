@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "./Navbar.css";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 function Navbar({ cartProducts, likedProducts }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenLogin, setIsOpenLogin] = useState(true);
-
+  const [isSearching, setIsSearching] = useState(false);
+  const navigate = useNavigate();
   return (
     <div className="navbarPage">
       <nav>
@@ -30,7 +31,23 @@ function Navbar({ cartProducts, likedProducts }) {
             </li>
           </ul>
           <div className="navBtns">
-            <i className="fas fa-search"></i>
+            <div className="searchBox">
+              <input
+                id="searchInput"
+                placeholder="Search..."
+                type="text"
+                className={isSearching ? "searchInput active" : "searchInput"}
+              />
+              <label htmlFor="searchInput">
+                <i
+                  onClick={() => {
+                    setIsSearching(!isSearching);
+                    navigate("/search");
+                  }}
+                  className="fas fa-search"
+                ></i>
+              </label>
+            </div>
             <Link to={"/liked"}>
               <span className="cartIcon">
                 <div className="cartCount">
@@ -56,7 +73,7 @@ function Navbar({ cartProducts, likedProducts }) {
               <p>Login</p>
             </button>
             <Link to={"/account"}>
-              <button>
+              <button className="userBtn">
                 <i className="fas fa-user"></i>
               </button>
             </Link>
@@ -89,7 +106,11 @@ function Navbar({ cartProducts, likedProducts }) {
               Enter your username and password to login.
             </p>
             <div className="loginInput">
-              <input required type="text" placeholder="almamun_uxui@outlook.com" />
+              <input
+                required
+                type="text"
+                placeholder="almamun_uxui@outlook.com"
+              />
             </div>
             <div className="passInput">
               <input required type="password" placeholder="*******" />
@@ -144,7 +165,11 @@ function Navbar({ cartProducts, likedProducts }) {
               <input required type="text" placeholder="Username" />
             </div>
             <div className="passInput">
-              <input required type="password" placeholder="Enter your email address" />
+              <input
+                required
+                type="password"
+                placeholder="Enter your email address"
+              />
             </div>
             <div className="passInput">
               <input required type="password" placeholder="Password" />

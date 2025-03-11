@@ -8,9 +8,26 @@ nav {
   border-bottom: 0.3px solid #46a358;
   position: fixed;
   width: 100%;
-  z-index: 99;
+  z-index: 99999;
   background-color: white;
   backdrop-filter: blur(90px);
+}
+.searchBox {
+  width: 200px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.searchBox input {
+  width: 0px;
+  border: none;
+  padding: 4px;
+  transition: all .5s ease;
+  outline: none;
+}
+.searchBox input.active {
+  width: 180px;
+  border-bottom: 1px solid #3d3d3d;
 }
 nav .links {
   display: flex;
@@ -74,6 +91,9 @@ nav .links a.active {
 }
 .navBtns i:hover {
   color: #46a358;
+}
+.userBtn i {
+  color: white !important ;
 }
 .register {
   position: fixed;

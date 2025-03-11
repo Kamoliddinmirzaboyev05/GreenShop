@@ -1,0 +1,11 @@
+.likedIcon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 20px;
+  color: #46a358;
+}
+.hoverIcons .likedActive {
+  background-color: #46a358 !important;
+  color: white !important;
+}

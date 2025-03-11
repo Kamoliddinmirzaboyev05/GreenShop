@@ -8,12 +8,82 @@ function Checkout({
   totalDiscount,
   totalShipping,
 }) {
+  const [showOrderModal, setShowOrderModal] = useState(false);
   return (
     <div className="page">
       <div className="checkoutPage">
-        <div className="orderModalBack">
+        <div
+          className={
+            showOrderModal
+              ? "orderModalBack activeOrderModal"
+              : "orderModalBack"
+          }
+        >
           <div className="orderModal">
-            
+            <span className="closeOrderModal">
+              <i className="fas fa-x"></i>
+            </span>
+            <div className="modalHead">
+              <div className="modalHero">
+                <div className="modalImg">
+                  <img src="/public/orderthank.png" alt="" />
+                </div>
+                <p>Your order has been received</p>
+              </div>
+            </div>
+            <div className="modalData">
+              <div className="modalMainData">
+                <div className="modalDataItem">
+                  <p className="key">Order Number </p>
+                  <p className="value">19586687</p>
+                </div>
+                <div className="modalDataItem">
+                  <p className="key">Date</p>
+                  <p className="value">15 Sep, 2021</p>
+                </div>
+                <div className="modalDataItem">
+                  <p className="key">Total</p>
+                  <p className="value">2,699.00</p>
+                </div>
+                <div className="modalDataItem">
+                  <p className="key">Payment Method</p>
+                  <p className="value">Cash on delivery</p>
+                </div>
+              </div>
+              <h3 className="modalDatTitle">Order Details</h3>
+              <div className="orderDetails">
+                <div className="orderDetailsNav">
+                  <p>Products</p>
+                  <p>Qty</p>
+                  <p>Subtotal</p>
+                </div>
+                <div className="orderDetailsItems">
+                  {cartProducts.map((item) => {
+                    return (
+                      <div className="orderItem">
+                        <div className="itemImg">
+                          <img src={item.img} alt="" />
+                        </div>
+                        <div className="itemText">
+                          <h2>{item.title}</h2>
+                          <p>SKU: 1995751877966</p>
+                        </div>
+                        <div className="itemCount">
+                          <p>(x {item.amount})</p>
+                        </div>
+                        <div className="itemSubtotalPrice">
+                          <h2>${item.price * item.amount}.00</h2>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="row">
+                  <p>Shiping</p>
+                  <p>$16.00</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div className="container">
@@ -210,7 +280,14 @@ function Checkout({
                     <label for="ondelivery">Cash on delivery</label>
                   </div>
                 </div>
-                <button className="placeOrderBtn">Place Order</button>
+                <button
+                  onClick={() => {
+                    setShowOrderModal(true);
+                  }}
+                  className="placeOrderBtn"
+                >
+                  Place Order
+                </button>
               </div>
             </div>
           </main>

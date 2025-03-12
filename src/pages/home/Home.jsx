@@ -14,11 +14,12 @@ import ProductCard from "../../components/productcard/ProductCard";
 function Home({
   productDB,
   addCart,
+  homeProducts,
   cartProducts,
   addToLiked = { addToLiked },
 }) {
   // Add poduct to Cart
-
+  const [productCount, setProductCount] = useState(9);
   return (
     <div className="page">
       <Swiper
@@ -174,7 +175,7 @@ function Home({
                   </div>
                 </div>
                 <div className="productsBlock">
-                  {productDB.map((item) => {
+                  {homeProducts.map((item) => {
                     return (
                       <ProductCard
                         item={item}

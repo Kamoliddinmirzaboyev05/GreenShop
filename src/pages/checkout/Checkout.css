@@ -174,8 +174,8 @@
 }
 input[type="radio"] {
   appearance: none;
-  width: 15px;
-  height: 15px;
+  width: 15px !important;
+  height: 15px !important;
   border: 2px solid #46a358;
   border-radius: 50%;
   display: inline-block;
@@ -223,10 +223,16 @@ input[type="radio"]:checked::before {
   position: fixed;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.508);
-  z-index: 9999999;
+  z-index: -1;
+  opacity: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all .5s ease;
+}
+.orderModalBack.activeOrderModal{
+  z-index: 9999999;
+  opacity: 1;
 }
 .orderModal {
   width: 580px;
@@ -246,14 +252,14 @@ input[type="radio"]:checked::before {
 }
 .modalHero {
   display: flex;
-  padding: 30px 40px;
+  padding: 20px 40px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 16px;
 }
 .modalData {
-  padding: 15px 40px;
+  padding: 10px 40px;
 }
 .modalMainData {
   display: flex;
@@ -299,6 +305,51 @@ input[type="radio"]:checked::before {
   flex-direction: column;
   gap: 10px;
   padding-top: 11px;
-  max-height: 240px;
+  max-height: 170px;
   overflow-y: auto;
+}
+.orderPrices{
+  padding: 15px 0;
+  padding-left: 150px; 
+  border-bottom: .3px solid #46A35880;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.orderPrices .row{
+  display: flex;
+  justify-content: space-between;
+}
+.orderInfo{
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  padding-top: 15px;
+  color: #727272;
+  padding-bottom: 29px;
+  text-align: center;
+}
+.trackOrder{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.trackBtn{
+  display: inline !important;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.orderTotal{
+  font-size: 16px;
+  font-weight: 700;
+  color: #3d3d3d;
+}
+.orderTotalValue{
+  color: #46a358;
+  font-size: 18px;
+  font-weight: 700;
+}
+.qty{
+  padding-left: 200px;
 }

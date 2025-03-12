@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Checkout.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 function Checkout({
   cartProducts,
   totalPrice,
@@ -9,6 +9,7 @@ function Checkout({
   totalShipping,
 }) {
   const [showOrderModal, setShowOrderModal] = useState(false);
+  const navigation = useNavigate()
   return (
     <div className="page">
       <div className="checkoutPage">
@@ -20,7 +21,12 @@ function Checkout({
           }
         >
           <div className="orderModal">
-            <span className="closeOrderModal">
+            <span
+              onClick={() => {
+                setShowOrderModal(false);
+              }}
+              className="closeOrderModal"
+            >
               <i className="fas fa-x"></i>
             </span>
             <div className="modalHead">
@@ -54,7 +60,7 @@ function Checkout({
               <div className="orderDetails">
                 <div className="orderDetailsNav">
                   <p>Products</p>
-                  <p>Qty</p>
+                  <p className="qty">Qty</p>
                   <p>Subtotal</p>
                 </div>
                 <div className="orderDetailsItems">
@@ -78,9 +84,34 @@ function Checkout({
                     );
                   })}
                 </div>
-                <div className="row">
-                  <p>Shiping</p>
-                  <p>$16.00</p>
+                <div className="orderPrices">
+                  <div className="row">
+                    <p>Shiping</p>
+                    <p>${totalShipping}.00</p>
+                  </div>
+                  <div className="row">
+                    <p className="orderTotal">Total</p>
+                    <p className="orderTotalValue">${totalPrice}.00</p>
+                  </div>
+                </div>
+                <p className="orderInfo">
+                  Your order is currently being processed. You will receive an
+                  order confirmation email shortly with the expected delivery
+                  date for your items.
+                </p>
+                <div className="trackOrder">
+                  <button
+                    onClick={() => {
+                      setShowOrderModal(false)
+                      alert(
+                        "Your order has been confirmed! We will deliver it to you soon."
+                      );
+                      navigation("/")
+                    }}
+                    className="trackBtn"
+                  >
+                    Track your order
+                  </button>
                 </div>
               </div>
             </div>

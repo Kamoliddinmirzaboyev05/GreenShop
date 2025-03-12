@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Search.css";
 import { NavLink } from "react-router-dom";
 import ProductCard from "../../components/productcard/ProductCard";
 import "./Search.css";
-function Search({ productDB, addToLiked, addCart }) {
+function Search({ small, productDB, seeds, hausePlants, addToLiked, addCart }) {
+  const [type, setType] = useState("all");
+  const [typeName, setTypeName] = useState("all");
   return (
     <div className="page">
       <div className="searchPage">
@@ -13,17 +15,22 @@ function Search({ productDB, addToLiked, addCart }) {
               <h2>Categories</h2>
               <div className="sideBarList">
                 <div className="col">
-                  <p>House Plants</p>
-                  <p>Seeds</p>
-                  <p>Small Plants</p>
+                  <p onClick={()=>{
+                    setTypeName("house")
+                  }}>House Plants</p>
+                  <p onClick={()=>{
+                    setTypeName("seeds")
+                  }}>Seeds</p>
+                  <p onClick={()=>{
+                    setTypeName("small")
+                  }}>Small Plants</p>
                   <p>Succulents</p>
                 </div>
                 <div className="col">
-                  <p>(33)</p>
-                  <p>(12)</p>
-                  <p>(65)</p>
+                  <p>({hausePlants.length})</p>
+                  <p>({seeds.length})</p>
+                  <p>({small.length})</p>
                   <p>(39)</p>
-                 
                 </div>
               </div>
               <div className="sideBarRange">
@@ -32,7 +39,9 @@ function Search({ productDB, addToLiked, addCart }) {
                 <p className="priceRange">
                   Price: <span>$39 - $1230</span>
                 </p>
-                <button>Filter</button>
+                <button onClick={()=>{
+                  setType(typeName)
+                }}>Filter</button>
               </div>
               <div className="sideBarSize">
                 <h2>Size</h2>
@@ -56,7 +65,9 @@ function Search({ productDB, addToLiked, addCart }) {
             <div className="productSide">
               <div className="productNav">
                 <div className="productNavLinks">
-                  <NavLink to={"/"}>All Plants</NavLink>
+                  <NavLink onClick={()=>{
+                    setType("all")
+                  }} to={"/search"}>All Plants</NavLink>
                   <NavLink to={"/arrivals"}>New Arrivals</NavLink>
                   <NavLink to={"/sale"}>Sale</NavLink>
                 </div>
@@ -71,13 +82,47 @@ function Search({ productDB, addToLiked, addCart }) {
               </div>
               <div className="productsBlock">
                 {productDB.map((item) => {
-                  return (
-                    <ProductCard
-                      item={item}
-                      addCart={addCart}
-                      addToLiked={addToLiked}
-                    />
-                  );
+                  if (type == "house") {
+                    if (item.type == "house") {
+                      return (
+                        <ProductCard
+                          item={item}
+                          addCart={addCart}
+                          addToLiked={addToLiked}
+                        />
+                      );
+                    }
+                  }else if (type == "seeds") {
+                    if (item.type == "seeds") {
+                      return (
+                        <ProductCard
+                          item={item}
+                          addCart={addCart}
+                          addToLiked={addToLiked}
+                        />
+                      );
+                    }
+                  } 
+                  else if (type == "small") {
+                    if (item.type == "small") {
+                      return (
+                        <ProductCard
+                          item={item}
+                          addCart={addCart}
+                          addToLiked={addToLiked}
+                        />
+                      );
+                    }
+                  } 
+                  else {
+                    return (
+                      <ProductCard
+                        item={item}
+                        addCart={addCart}
+                        addToLiked={addToLiked}
+                      />
+                    );
+                  }
                 })}
               </div>
               <div className="pageNum">

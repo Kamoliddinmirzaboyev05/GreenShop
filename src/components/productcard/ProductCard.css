@@ -9,3 +9,6 @@
   background-color: #46a358 !important;
   color: white !important;
 }
+.productImg img{
+  object-fit: cover !important;
+}

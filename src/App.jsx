@@ -21,6 +21,7 @@ function App() {
             id: 1,
             img: "/box1.1.png",
             title: "Barberton Daisy",
+            type: "house",
             price: 119.0,
             incart: false,
             liked: false,
@@ -40,6 +41,178 @@ function App() {
             id: 2,
             img: "/box1.2.png",
             title: "Angel Wing Begonia",
+            type: "house",
+            price: 169.0,
+            incart: false,
+            liked: false,
+            discount: 10,
+            imgs: [
+              "https://plantsforpetparents.com/cdn/shop/collections/6PALM_NEANTHEBELLA-1_91418a21-bd18-4941-8c78-1b4744ed2366.webp?v=1693561170",
+              "https://images.thdstatic.com/productImages/5fad57fb-d5ea-44ba-86da-2c15d5b240c0/svn/costa-farms-house-plants-co-brdfern-3-gp-64_600.jpg",
+              "https://images.thdstatic.com/productImages/cec76877-a200-4ae0-92c3-9bbee4a99a32/svn/house-plants-4-fern-leslie-64_600.jpg",
+              "https://www.thegardenstore.sg/image/cache/catalog/products/Plant/Asplenium%20Bird%20Nest%20Fern%20Small-910x1155.png",
+            ],
+            descr:
+              "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
+            size: "S",
+            category: "Potter Plants",
+          },
+
+          {
+            id: 3,
+            img: "/box1.3.png",
+            title: "African Violet",
+            type: "house",
+            price: 199.0,
+            incart: false,
+            liked: false,
+            discount: 20,
+            imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
+            descr:
+              "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
+            size: "S",
+            category: "Potter Plants",
+          },
+          {
+            id: 4,
+            img: "/box1.4.png",
+            title: "Beach Spider Lily",
+            type: "seeds",
+            price: 129.0,
+            incart: false,
+            liked: false,
+            discount: 12,
+            imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
+            descr:
+              "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
+            size: "S",
+            category: "Potter Plants",
+          },
+          {
+            id: 5,
+            img: "/box1.5.png",
+            title: "Blushing Bromeliad",
+            type: "seeds",
+            price: 139.0,
+            incart: false,
+            liked: false,
+            discount: null,
+            imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
+            descr:
+              "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
+            size: "S",
+            category: "Potter Plants",
+          },
+          {
+            id: 6,
+            img: "/box1.6.png",
+            title: "Aluminum Plant",
+            type: "seeds",
+            price: 179.0,
+            incart: false,
+            liked: false,
+            discount: null,
+            imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
+            descr:
+              "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
+            size: "S",
+            category: "Potter Plants",
+          },
+          {
+            id: 7,
+            img: "/box1.7.png",
+            title: "Bird's Nest Fern",
+            type: "small",
+            price: 99.0,
+            incart: false,
+            liked: false,
+            discount: 7,
+            imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
+            descr:
+              "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
+            size: "S",
+            category: "Potter Plants",
+          },
+          {
+            id: 8,
+            img: "/box1.8.png",
+            title: "Broadleaf Lady Palm",
+            type: "small",
+            price: 59.0,
+            incart: false,
+            liked: false,
+            discount: null,
+            imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
+            descr:
+              "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
+            size: "S",
+            category: "Potter Plants",
+          },
+          {
+            id: 9,
+            img: "/box1.9.png",
+            title: "Chinese Evergreen",
+            type: "small",
+            price: 39.0,
+            incart: false,
+            liked: false,
+            discount: 3,
+            imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
+            descr:
+              "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
+            size: "S",
+            category: "Potter Plants",
+          },
+          {
+            id: 10,
+            img: "/homeplant3.jpg",
+            title: "Chinese Evergreen",
+            type: "small",
+            price: 39.0,
+            incart: false,
+            liked: false,
+            discount: 3,
+            imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
+            descr:
+              "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
+            size: "S",
+            category: "Potter Plants",
+          },
+          {
+            id: 11,
+            img: "/homeplant1.jpg",
+            title: "Ficus",
+            type: "small",
+            price: 89.0,
+            incart: false,
+            liked: false,
+            discount: 3,
+            imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
+            descr:
+              "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
+            size: "S",
+            category: "Potter Plants",
+          },
+          {
+            id: 12,
+            img: "/homeplant2.jpg",
+            title: "Chinese Evergreen",
+            type: "small",
+            price: 39.0,
+            incart: false,
+            liked: false,
+            discount: 3,
+            imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
+            descr:
+              "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
+            size: "S",
+            category: "Potter Plants",
+          },
+          {
+            id: 13,
+            img: "/seed1.jpg",
+            title: "Angel Wing Begonia",
+            type: "seed",
             price: 169.0,
             incart: false,
             liked: false,
@@ -56,98 +229,160 @@ function App() {
             category: "Potter Plants",
           },
           {
-            id: 3,
-            img: "/box1.3.png",
-            title: "African Violet",
-            price: 199.0,
+            id: 14,
+            img: "/seed2.jpg",
+            title: "Angel Wing Begonia",
+            type: "seed",
+            price: 169.0,
             incart: false,
             liked: false,
-            discount: 20,
-            imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
+            discount: 10,
+            imgs: [
+              "https://plantsforpetparents.com/cdn/shop/collections/6PALM_NEANTHEBELLA-1_91418a21-bd18-4941-8c78-1b4744ed2366.webp?v=1693561170",
+              "https://images.thdstatic.com/productImages/5fad57fb-d5ea-44ba-86da-2c15d5b240c0/svn/costa-farms-house-plants-co-brdfern-3-gp-64_600.jpg",
+              "https://images.thdstatic.com/productImages/cec76877-a200-4ae0-92c3-9bbee4a99a32/svn/house-plants-4-fern-leslie-64_600.jpg",
+              "https://www.thegardenstore.sg/image/cache/catalog/products/Plant/Asplenium%20Bird%20Nest%20Fern%20Small-910x1155.png",
+            ],
             descr:
               "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
             size: "S",
             category: "Potter Plants",
           },
           {
-            id: 4,
-            img: "/box1.4.png",
-            title: "Beach Spider Lily",
-            price: 129.0,
+            id: 15,
+            img: "/seed3.jpg",
+            title: "Angel Wing Begonia",
+            type: "seed",
+            price: 169.0,
             incart: false,
             liked: false,
-            discount: 12,
-            imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
+            discount: 10,
+            imgs: [
+              "https://plantsforpetparents.com/cdn/shop/collections/6PALM_NEANTHEBELLA-1_91418a21-bd18-4941-8c78-1b4744ed2366.webp?v=1693561170",
+              "https://images.thdstatic.com/productImages/5fad57fb-d5ea-44ba-86da-2c15d5b240c0/svn/costa-farms-house-plants-co-brdfern-3-gp-64_600.jpg",
+              "https://images.thdstatic.com/productImages/cec76877-a200-4ae0-92c3-9bbee4a99a32/svn/house-plants-4-fern-leslie-64_600.jpg",
+              "https://www.thegardenstore.sg/image/cache/catalog/products/Plant/Asplenium%20Bird%20Nest%20Fern%20Small-910x1155.png",
+            ],
             descr:
               "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
             size: "S",
             category: "Potter Plants",
           },
           {
-            id: 5,
-            img: "/box1.5.png",
-            title: "Blushing Bromeliad",
-            price: 139.0,
+            id: 16,
+            img: "/smallplant1.jpg",
+            title: "Angel Wing Begonia",
+            type: "seed",
+            price: 169.0,
             incart: false,
             liked: false,
-            discount: null,
-            imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
+            discount: 10,
+            imgs: [
+              "https://plantsforpetparents.com/cdn/shop/collections/6PALM_NEANTHEBELLA-1_91418a21-bd18-4941-8c78-1b4744ed2366.webp?v=1693561170",
+              "https://images.thdstatic.com/productImages/5fad57fb-d5ea-44ba-86da-2c15d5b240c0/svn/costa-farms-house-plants-co-brdfern-3-gp-64_600.jpg",
+              "https://images.thdstatic.com/productImages/cec76877-a200-4ae0-92c3-9bbee4a99a32/svn/house-plants-4-fern-leslie-64_600.jpg",
+              "https://www.thegardenstore.sg/image/cache/catalog/products/Plant/Asplenium%20Bird%20Nest%20Fern%20Small-910x1155.png",
+            ],
             descr:
               "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
             size: "S",
             category: "Potter Plants",
           },
           {
-            id: 6,
-            img: "/box1.6.png",
-            title: "Aluminum Plant",
-            price: 179.0,
+            id: 17,
+            img: "/smallplant2.jpg",
+            title: "Angel Wing Begonia",
+            type: "seed",
+            price: 169.0,
             incart: false,
             liked: false,
-            discount: null,
-            imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
+            discount: 10,
+            imgs: [
+              "https://plantsforpetparents.com/cdn/shop/collections/6PALM_NEANTHEBELLA-1_91418a21-bd18-4941-8c78-1b4744ed2366.webp?v=1693561170",
+              "https://images.thdstatic.com/productImages/5fad57fb-d5ea-44ba-86da-2c15d5b240c0/svn/costa-farms-house-plants-co-brdfern-3-gp-64_600.jpg",
+              "https://images.thdstatic.com/productImages/cec76877-a200-4ae0-92c3-9bbee4a99a32/svn/house-plants-4-fern-leslie-64_600.jpg",
+              "https://www.thegardenstore.sg/image/cache/catalog/products/Plant/Asplenium%20Bird%20Nest%20Fern%20Small-910x1155.png",
+            ],
             descr:
               "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
             size: "S",
             category: "Potter Plants",
           },
           {
-            id: 7,
-            img: "/box1.7.png",
-            title: "Bird's Nest Fern",
-            price: 99.0,
+            id: 18,
+            img: "/smallplant13.jpg",
+            title: "Angel Wing Begonia",
+            type: "seed",
+            price: 169.0,
             incart: false,
             liked: false,
-            discount: 7,
-            imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
+            discount: 10,
+            imgs: [
+              "https://plantsforpetparents.com/cdn/shop/collections/6PALM_NEANTHEBELLA-1_91418a21-bd18-4941-8c78-1b4744ed2366.webp?v=1693561170",
+              "https://images.thdstatic.com/productImages/5fad57fb-d5ea-44ba-86da-2c15d5b240c0/svn/costa-farms-house-plants-co-brdfern-3-gp-64_600.jpg",
+              "https://images.thdstatic.com/productImages/cec76877-a200-4ae0-92c3-9bbee4a99a32/svn/house-plants-4-fern-leslie-64_600.jpg",
+              "https://www.thegardenstore.sg/image/cache/catalog/products/Plant/Asplenium%20Bird%20Nest%20Fern%20Small-910x1155.png",
+            ],
             descr:
               "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
             size: "S",
             category: "Potter Plants",
           },
           {
-            id: 8,
-            img: "/box1.8.png",
-            title: "Broadleaf Lady Palm",
-            price: 59.0,
+            id: 19,
+            img: "/smallplant14.jpg",
+            title: "Angel Wing Begonia",
+            type: "seed",
+            price: 169.0,
             incart: false,
             liked: false,
-            discount: null,
-            imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
+            discount: 10,
+            imgs: [
+              "https://plantsforpetparents.com/cdn/shop/collections/6PALM_NEANTHEBELLA-1_91418a21-bd18-4941-8c78-1b4744ed2366.webp?v=1693561170",
+              "https://images.thdstatic.com/productImages/5fad57fb-d5ea-44ba-86da-2c15d5b240c0/svn/costa-farms-house-plants-co-brdfern-3-gp-64_600.jpg",
+              "https://images.thdstatic.com/productImages/cec76877-a200-4ae0-92c3-9bbee4a99a32/svn/house-plants-4-fern-leslie-64_600.jpg",
+              "https://www.thegardenstore.sg/image/cache/catalog/products/Plant/Asplenium%20Bird%20Nest%20Fern%20Small-910x1155.png",
+            ],
             descr:
               "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
             size: "S",
             category: "Potter Plants",
           },
           {
-            id: 9,
-            img: "/box1.9.png",
-            title: "Chinese Evergreen",
-            price: 39.0,
+            id: 20,
+            img: "/seed3.jpg",
+            title: "Angel Wing Begonia",
+            type: "seed",
+            price: 169.0,
             incart: false,
             liked: false,
-            discount: 3,
-            imgs: ["/box1.1.png", "/box1.1.png", "/box1.1.png", "/box1.1.png"],
+            discount: 10,
+            imgs: [
+              "https://plantsforpetparents.com/cdn/shop/collections/6PALM_NEANTHEBELLA-1_91418a21-bd18-4941-8c78-1b4744ed2366.webp?v=1693561170",
+              "https://images.thdstatic.com/productImages/5fad57fb-d5ea-44ba-86da-2c15d5b240c0/svn/costa-farms-house-plants-co-brdfern-3-gp-64_600.jpg",
+              "https://images.thdstatic.com/productImages/cec76877-a200-4ae0-92c3-9bbee4a99a32/svn/house-plants-4-fern-leslie-64_600.jpg",
+              "https://www.thegardenstore.sg/image/cache/catalog/products/Plant/Asplenium%20Bird%20Nest%20Fern%20Small-910x1155.png",
+            ],
+            descr:
+              "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
+            size: "S",
+            category: "Potter Plants",
+          },
+          {
+            id: 21,
+            img: "/seed3.jpg",
+            title: "Angel Wing Begonia",
+            type: "seed",
+            price: 169.0,
+            incart: false,
+            liked: false,
+            discount: 10,
+            imgs: [
+              "https://plantsforpetparents.com/cdn/shop/collections/6PALM_NEANTHEBELLA-1_91418a21-bd18-4941-8c78-1b4744ed2366.webp?v=1693561170",
+              "https://images.thdstatic.com/productImages/5fad57fb-d5ea-44ba-86da-2c15d5b240c0/svn/costa-farms-house-plants-co-brdfern-3-gp-64_600.jpg",
+              "https://images.thdstatic.com/productImages/cec76877-a200-4ae0-92c3-9bbee4a99a32/svn/house-plants-4-fern-leslie-64_600.jpg",
+              "https://www.thegardenstore.sg/image/cache/catalog/products/Plant/Asplenium%20Bird%20Nest%20Fern%20Small-910x1155.png",
+            ],
             descr:
               "The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. ",
             size: "S",
@@ -155,6 +390,7 @@ function App() {
           },
         ]
   );
+  const homeProducts = productDB.slice(0, 9);
 
   const [cartProducts, setCartProducts] = useState(
     localStorage.getItem("cartProducts")
@@ -286,6 +522,15 @@ function App() {
       setCouponCode("");
     }
   };
+  const hausePlants = productDB.filter((item) => {
+    return item.type == "house";
+  });
+  const seeds = productDB.filter((item) => {
+    return item.type == "seeds";
+  });
+  const small = productDB.filter((item) => {
+    return item.type == "small";
+  });
   localStorage.setItem("productDB", JSON.stringify(productDB));
   return (
     <BrowserRouter>
@@ -295,6 +540,7 @@ function App() {
           path="/"
           element={
             <Home
+              homeProducts={homeProducts}
               addToLiked={addToLiked}
               addCart={addCart}
               cartProducts={cartProducts}
@@ -330,6 +576,9 @@ function App() {
           path="/search"
           element={
             <Search
+              small={small}
+              seeds={seeds}
+              hausePlants={hausePlants}
               productDB={productDB}
               addToLiked={addToLiked}
               addCart={addCart}

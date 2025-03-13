@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Navbar.css";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 
-function Navbar({ cartProducts, likedProducts }) {
+function Navbar({ setSearchName, cartProducts, likedProducts }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenLogin, setIsOpenLogin] = useState(true);
   const [isSearching, setIsSearching] = useState(false);
@@ -33,6 +33,9 @@ function Navbar({ cartProducts, likedProducts }) {
           <div className="navBtns">
             <div className="searchBox">
               <input
+                onChange={(e) => {
+                  setSearchName(e.target.value);
+                }}
                 id="searchInput"
                 placeholder="Search..."
                 type="text"

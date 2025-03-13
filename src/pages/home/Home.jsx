@@ -132,11 +132,7 @@ function Home({
                   </div>
                 </div>
                 <div className="sideBarRange">
-                  <h2>Price Range</h2>
-                  <input type="range" />
-                  <p className="priceRange">
-                    Price: <span>$39 - $1230</span>
-                  </p>
+                 
                   <button>Filter</button>
                 </div>
                 <div className="sideBarSize">

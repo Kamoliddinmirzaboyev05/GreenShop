@@ -2,10 +2,28 @@ import React, { useState } from "react";
 import "./Search.css";
 import { NavLink } from "react-router-dom";
 import ProductCard from "../../components/productcard/ProductCard";
+import Box from "@mui/material/Box";
+import Slider from "@mui/material/Slider";
 import "./Search.css";
-function Search({ small, productDB, seeds, hausePlants, addToLiked, addCart }) {
+function Search({
+  editProduct,
+  small,
+  setSortBy,
+  seeds,
+  hausePlants,
+  addToLiked,
+  addCart,
+}) {
   const [type, setType] = useState("all");
   const [typeName, setTypeName] = useState("all");
+  const [value, setValue] = React.useState([30, 250]);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+  function valuetext(value) {
+    return `${value}°C`;
+  }
   return (
     <div className="page">
       <div className="searchPage">
@@ -15,15 +33,27 @@ function Search({ small, productDB, seeds, hausePlants, addToLiked, addCart }) {
               <h2>Categories</h2>
               <div className="sideBarList">
                 <div className="col">
-                  <p onClick={()=>{
-                    setTypeName("house")
-                  }}>House Plants</p>
-                  <p onClick={()=>{
-                    setTypeName("seeds")
-                  }}>Seeds</p>
-                  <p onClick={()=>{
-                    setTypeName("small")
-                  }}>Small Plants</p>
+                  <p
+                    onClick={() => {
+                      setTypeName("house");
+                    }}
+                  >
+                    House Plants
+                  </p>
+                  <p
+                    onClick={() => {
+                      setTypeName("seeds");
+                    }}
+                  >
+                    Seeds
+                  </p>
+                  <p
+                    onClick={() => {
+                      setTypeName("small");
+                    }}
+                  >
+                    Small Plants
+                  </p>
                   <p>Succulents</p>
                 </div>
                 <div className="col">
@@ -35,13 +65,27 @@ function Search({ small, productDB, seeds, hausePlants, addToLiked, addCart }) {
               </div>
               <div className="sideBarRange">
                 <h2>Price Range</h2>
-                <input type="range" />
+                <Box sx={{ width: 300 }}>
+                  <Slider
+                    getAriaLabel={() => "Temperature range"}
+                    value={value}
+                    onChange={handleChange}
+                    valueLabelDisplay="auto"
+                    getAriaValueText={valuetext}
+                    min={20}
+                    max={500}
+                  />
+                </Box>
                 <p className="priceRange">
                   Price: <span>$39 - $1230</span>
                 </p>
-                <button onClick={()=>{
-                  setType(typeName)
-                }}>Filter</button>
+                <button
+                  onClick={() => {
+                    setType(typeName);
+                  }}
+                >
+                  Filter
+                </button>
               </div>
               <div className="sideBarSize">
                 <h2>Size</h2>
@@ -65,23 +109,36 @@ function Search({ small, productDB, seeds, hausePlants, addToLiked, addCart }) {
             <div className="productSide">
               <div className="productNav">
                 <div className="productNavLinks">
-                  <NavLink onClick={()=>{
-                    setType("all")
-                  }} to={"/search"}>All Plants</NavLink>
+                  <NavLink
+                    onClick={() => {
+                      setType("all");
+                    }}
+                    to={"/search"}
+                  >
+                    All Plants
+                  </NavLink>
                   <NavLink to={"/arrivals"}>New Arrivals</NavLink>
                   <NavLink to={"/sale"}>Sale</NavLink>
                 </div>
                 <div className="productNavFilter">
                   <p>Sort by: </p>
-                  <select name="select" id="select">
-                    <option value="defoult" disabled selected>
-                      Default sorting
-                    </option>
+                  <select
+                    onChange={(e) => {
+                      setSortBy(e.target.value);
+                    }}
+                    name="select"
+                    id="select"
+                  >
+                    <option value="defoult">Default sorting</option>
+                    <option value="alphabet">By Alphabet</option>
+                    <option value="cheapper">By cheaper</option>
+                    <option value="expensive">By more expensive</option>
+                    <option value="promotions">Promotions</option>
                   </select>
                 </div>
               </div>
               <div className="productsBlock">
-                {productDB.map((item) => {
+                {editProduct.map((item) => {
                   if (type == "house") {
                     if (item.type == "house") {
                       return (
@@ -92,7 +149,7 @@ function Search({ small, productDB, seeds, hausePlants, addToLiked, addCart }) {
                         />
                       );
                     }
-                  }else if (type == "seeds") {
+                  } else if (type == "seeds") {
                     if (item.type == "seeds") {
                       return (
                         <ProductCard
@@ -102,8 +159,7 @@ function Search({ small, productDB, seeds, hausePlants, addToLiked, addCart }) {
                         />
                       );
                     }
-                  } 
-                  else if (type == "small") {
+                  } else if (type == "small") {
                     if (item.type == "small") {
                       return (
                         <ProductCard
@@ -113,8 +169,7 @@ function Search({ small, productDB, seeds, hausePlants, addToLiked, addCart }) {
                         />
                       );
                     }
-                  } 
-                  else {
+                  } else {
                     return (
                       <ProductCard
                         item={item}

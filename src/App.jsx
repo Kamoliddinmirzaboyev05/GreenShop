@@ -350,7 +350,7 @@ function App() {
           },
           {
             id: 20,
-            img: "/seed3.jpg",
+            img: "/Succulents1.jpg",
             title: "Angel Wing Begonia",
             type: "seed",
             price: 169.0,
@@ -370,7 +370,7 @@ function App() {
           },
           {
             id: 21,
-            img: "/seed3.jpg",
+            img: "/Succulents2.jpg",
             title: "Angel Wing Begonia",
             type: "seed",
             price: 169.0,
@@ -390,6 +390,46 @@ function App() {
           },
         ]
   );
+  // filtering products function
+  const [searchName, setSearchName] = useState(null);
+  const [sortBy, setSortBy] = useState(null);
+  const [editProduct, setEditProduct] = useState([...productDB]);
+  const [sortedProducts, setSortedProducts] = useState([...productDB]);
+
+  const filterProduct = () => {
+    if (searchName != null) {
+      setEditProduct(
+        productDB.filter((item) => {
+          return item.title.toLowerCase().includes(searchName.toLowerCase());
+        })
+      );
+    } else if (sortBy == "cheapper") {
+      var sortProduct = sortedProducts.sort((a, b) => {
+        return a.price - b.price;
+      });
+      setEditProduct(sortProduct);
+    } else if (sortBy == "expensive") {
+      var sortProduct = sortedProducts.sort((a, b) => {
+        return b.price - a.price;
+      });
+      setEditProduct(sortProduct);
+    } else if (sortBy == "promotions") {
+      var sortProduct = sortedProducts.filter((item) => {
+        return item.discount;
+      });
+      setEditProduct(sortProduct);
+    }
+    else if (sortBy == "alphabet") {
+      var sortProduct = sortedProducts.sort((a, b) => {
+        return a.title.localeCompare(b.title)
+      });
+      setEditProduct(sortProduct);
+    }
+  };
+
+  useEffect(() => {
+    filterProduct();
+  }, [searchName, sortBy]);
   const homeProducts = productDB.slice(0, 9);
 
   const [cartProducts, setCartProducts] = useState(
@@ -534,7 +574,11 @@ function App() {
   localStorage.setItem("productDB", JSON.stringify(productDB));
   return (
     <BrowserRouter>
-      <Navbar likedProducts={likedProducts} cartProducts={cartProducts} />
+      <Navbar
+        likedProducts={likedProducts}
+        setSearchName={setSearchName}
+        cartProducts={cartProducts}
+      />
       <Routes>
         <Route
           path="/"
@@ -576,6 +620,8 @@ function App() {
           path="/search"
           element={
             <Search
+              setSortBy={setSortBy}
+              editProduct={editProduct}
               small={small}
               seeds={seeds}
               hausePlants={hausePlants}
